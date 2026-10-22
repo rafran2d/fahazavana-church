@@ -1,0 +1,22 @@
+.env
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+*.log
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+/models/
+# Flutter
+apps/mobile/.dart_tool/
+apps/mobile/build/
+apps/mobile/.flutter-plugins
+apps/mobile/.flutter-plugins-dependencies
+apps/mobile/**/*.g.dart
+.vite/

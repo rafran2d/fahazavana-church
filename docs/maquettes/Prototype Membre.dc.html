@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#EFE8DB;font-family:Figtree,sans-serif;color:#2B2219;-webkit-font-smoothing:antialiased}a{color:#9A6220}a:hover{color:#7A4A12}*{box-sizing:border-box}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-wrap:wrap;gap:56px;align-items:center;justify-content:center;padding:40px 24px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:320px">
+<span style="font-size:13px;color:#75685A;letter-spacing:.06em;text-transform:uppercase;font-weight:600">Prototype · app Membre</span>
+<h1 style="font-family:Newsreader,serif;font-weight:500;font-size:44px;line-height:1.05;margin:0">Fahazavana</h1>
+<p style="margin:0;font-size:16px;line-height:1.5;color:#75685A;text-wrap:pretty">Parcours du scénario de démo : rejoindre le direct, changer de langue, télécharger puis écouter en mode avion.</p>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+<div onClick="{{ s.onClick }}" style="display:flex;gap:10px;align-items:center;font-size:15px;cursor:pointer;padding:8px 10px;border-radius:10px;background:{{ s.bg }}"><span style="width:24px;height:24px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700">{{ s.n }}</span>{{ s.label }}</div>
+</sc-for>
+</div>
+</div>
+
+<div style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px;flex-shrink:0">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column;position:relative">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600;flex-shrink:0"><span>10:04</span><span>{{ netIcon }}</span></div>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div style="padding:6px 22px;display:flex;flex-direction:column;gap:18px;flex:1;overflow:hidden">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;margin:0">Manao ahoana, Fanja</h3>
+<div onClick="{{ goLive }}" style="border-radius:18px;overflow:hidden;background:#fff;border:1px solid #E6DDCC;cursor:pointer">
+<div style="height:150px;background:repeating-linear-gradient(135deg,#4A3A2A 0 12px,#433424 12px 24px);position:relative;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#C9B89E">vignette du direct<span style="position:absolute;top:10px;left:10px;background:#C2502F;color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:700">EN DIRECT</span></div>
+<div style="padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Ny fitiavana tsy mety ho levona</span><span style="font-size:13px;color:#75685A">Tempoly Fitiavana · {{ viewers }} spectateurs</span></div><span style="height:38px;padding:0 14px;border-radius:10px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-size:14px;font-weight:600">Rejoindre</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em">Églises suivies</span>
+<div style="display:flex;gap:14px">
+<div onClick="{{ goChurch }}" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:72px;cursor:pointer"><span style="width:60px;height:60px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:24px;outline:2px solid #C2502F;outline-offset:2px">T</span><span style="font-size:12px">Fitiavana</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:72px"><span style="width:60px;height:60px;border-radius:50%;background:#F4E6CF;color:#9A6220;display:grid;place-items:center;font-family:Newsreader,serif;font-size:24px">A</span><span style="font-size:12px">Ambohitantely</span></div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isChurch }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;flex:1;overflow:hidden">
+<div style="height:130px;background:repeating-linear-gradient(135deg,#EDE4D3 0 10px,#E5D9C3 10px 20px);position:relative;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#75685A;flex-shrink:0"><span onClick="{{ goHome }}" style="position:absolute;top:10px;left:18px;font-family:Figtree;font-size:22px;cursor:pointer;color:#2B2219">←</span>photo de l'église</div>
+<div style="padding:0 22px;display:flex;flex-direction:column;gap:14px">
+<div style="width:76px;height:76px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:34px;margin-top:-38px;border:4px solid #FBF8F2">T</div>
+<div style="display:flex;flex-direction:column;gap:4px"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:28px;margin:0">Tempoly Fitiavana</h3><span style="font-size:14px;color:#75685A">Antananarivo · {{ members }} membres</span></div>
+<div onClick="{{ toggleFollow }}" style="height:48px;border-radius:14px;background:{{ followBg }};color:{{ followColor }};border:1px solid #B9792A;display:grid;place-items:center;font-weight:700;font-size:16px;cursor:pointer">{{ followLabel }}</div>
+<div onClick="{{ goLive }}" style="display:flex;gap:12px;align-items:center;background:#FFF8EC;border:1px solid #F0DDBE;border-radius:14px;padding:12px;cursor:pointer"><span style="width:10px;height:10px;border-radius:50%;background:#C2502F"></span><div style="display:flex;flex-direction:column;gap:2px;flex:1"><span style="font-size:15px;font-weight:600">En direct maintenant</span><span style="font-size:13px;color:#75685A">Pasteur Hery · MG → FR, EN</span></div><span style="color:#9A6220;font-weight:600">›</span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isLive }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;flex:1;overflow:hidden;margin-top:-44px">
+<div style="height:230px;background:repeating-linear-gradient(135deg,#4A3A2A 0 12px,#433424 12px 24px);position:relative;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#C9B89E;flex-shrink:0">
+<span onClick="{{ goHome }}" style="position:absolute;top:50px;left:18px;font-family:Figtree;font-size:22px;color:#FBF8F2;cursor:pointer">←</span>vidéo du direct
+<div style="position:absolute;bottom:12px;left:14px;display:flex;gap:6px"><span style="background:#C2502F;color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:700">EN DIRECT</span><span style="background:rgba(0,0,0,.45);color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:600">{{ liveClock }}</span><span style="background:rgba(0,0,0,.45);color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:600">{{ viewers }}</span></div>
+</div>
+<div style="padding:14px 20px 8px;display:flex;flex-direction:column;gap:4px"><span style="font-family:Newsreader,serif;font-size:22px;line-height:1.2">Ny fitiavana tsy mety ho levona</span><span style="font-size:13px;color:#75685A">Pasteur Hery · Tempoly Fitiavana</span></div>
+<div style="padding:4px 20px 12px;display:flex;gap:6px;border-bottom:1px solid #E6DDCC">
+<sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
+<span onClick="{{ l.onClick }}" style="padding:8px 13px;border-radius:20px;border:1px solid {{ l.border }};background:{{ l.bg }};color:{{ l.color }};font-size:14px;font-weight:600;cursor:pointer">{{ l.label }}</span>
+</sc-for>
+</div>
+<div style="flex:1;padding:16px 20px;display:flex;flex-direction:column;justify-content:flex-end;gap:16px;overflow:hidden">
+<sc-for list="{{ prevLines }}" as="p" hint-placeholder-count="2">
+<div style="display:flex;flex-direction:column;gap:4px;opacity:{{ p.opacity }}"><span style="font-size:12px;color:#75685A">{{ p.time }}</span><p style="margin:0;font-size:16px;line-height:1.45">{{ p.text }}</p></div>
+</sc-for>
+<div style="display:flex;flex-direction:column;gap:6px;border-left:3px solid #B9792A;padding-left:12px"><span style="font-size:12px;color:#9A6220;font-weight:600">{{ cur.time }} · en cours</span><p style="margin:0;font-family:Newsreader,serif;font-size:21px;line-height:1.35">{{ cur.text }}</p><sc-if value="{{ showOriginal }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-size:13px;line-height:1.4;color:#75685A;font-style:italic">{{ cur.orig }}</p></sc-if></div>
+</div>
+<div style="padding:10px 20px 22px;font-size:13px;color:#75685A;border-top:1px solid #E6DDCC">Traduction IA · décalage ~3 s</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isLibrary }}" hint-placeholder-val="{{ false }}">
+<div style="padding:6px 22px;display:flex;flex-direction:column;gap:14px;flex:1;overflow:hidden">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;margin:0">Bibliothèque</h3>
+<div onClick="{{ toggleOffline }}" style="display:flex;gap:8px;align-items:center;cursor:pointer;font-size:13px;font-weight:600;color:#4D4134">Mode avion<span style="width:44px;height:26px;border-radius:13px;background:{{ toggleBg }};position:relative;display:block"><span style="position:absolute;left:{{ knobLeft }};top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .2s"></span></span></div></div>
+<sc-if value="{{ offline }}" hint-placeholder-val="{{ false }}"><div style="background:#2B2219;color:#F4E6CF;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;text-align:center">Hors connexion · seuls les contenus téléchargés sont lisibles</div></sc-if>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ library }}" as="it" hint-placeholder-count="4">
+<div style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #EFE7D9;opacity:{{ it.opacity }}">
+<div onClick="{{ it.onOpen }}" style="display:flex;gap:12px;align-items:center;flex:1;min-width:0;cursor:pointer"><div style="width:52px;height:52px;border-radius:12px;background:#F4E6CF;flex-shrink:0;display:grid;place-items:center;color:#9A6220">▶</div><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-size:15px;font-weight:600">{{ it.title }}</span><span style="font-size:13px;color:#75685A">{{ it.meta }}</span></div></div>
+<div onClick="{{ it.onAction }}" style="min-width:40px;height:36px;padding:0 8px;border-radius:18px;background:{{ it.bg }};color:{{ it.color }};border:1px solid {{ it.border }};display:grid;place-items:center;font-size:13px;font-weight:700;cursor:pointer">{{ it.status }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isPlayer }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;flex:1;overflow:hidden">
+<div style="padding:4px 22px;display:flex;justify-content:space-between;align-items:center"><span onClick="{{ goLibrary }}" style="font-size:22px;cursor:pointer">←</span><span style="font-size:13px;color:#75685A">{{ playerSource }}</span><span style="width:22px"></span></div>
+<sc-if value="{{ offline }}" hint-placeholder-val="{{ false }}"><div style="margin:4px 20px 0;background:#2B2219;color:#F4E6CF;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;text-align:center">Hors connexion · lecture depuis le téléphone</div></sc-if>
+<div style="padding:16px 26px 24px;display:flex;flex-direction:column;gap:18px;flex:1">
+<div style="height:220px;border-radius:20px;background:repeating-linear-gradient(135deg,#EDE4D3 0 10px,#E5D9C3 10px 20px);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#75685A">visuel de la prédication</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:Newsreader,serif;font-size:24px;line-height:1.15">{{ playerTitle }}</span><span style="font-size:14px;color:#75685A">Pasteur Hery · Tempoly Fitiavana</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:{{ pct }};height:100%;background:#B9792A;border-radius:3px"></div></div><div style="display:flex;justify-content:space-between;font-size:12px;color:#75685A"><span>{{ posLabel }}</span><span>{{ durLabel }}</span></div></div>
+<div style="display:flex;justify-content:center;align-items:center;gap:36px"><span onClick="{{ back15 }}" style="font-size:15px;font-weight:600;cursor:pointer">−15</span><div onClick="{{ togglePlay }}" style="width:68px;height:68px;border-radius:50%;background:#2B2219;color:#FBF8F2;display:grid;place-items:center;font-size:20px;cursor:pointer">{{ playIcon }}</div><span onClick="{{ fwd15 }}" style="font-size:15px;font-weight:600;cursor:pointer">+15</span></div>
+<div style="margin-top:auto;background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;font-size:12px;color:#75685A"><span style="font-weight:600;text-transform:uppercase;letter-spacing:.05em">Texte · {{ langName }}</span><span onClick="{{ cycleLang }}" style="color:#9A6220;font-weight:600;cursor:pointer">Changer</span></div><p style="margin:0;font-family:Newsreader,serif;font-size:17px;line-height:1.4">{{ playerLine }}</p></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showTabs }}" hint-placeholder-val="{{ true }}">
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(3,1fr);font-size:13px;text-align:center;align-items:center;flex-shrink:0;margin-top:auto">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3"><span onClick="{{ t.onClick }}" style="color:{{ t.color }};font-weight:{{ t.weight }};cursor:pointer;padding:20px 0">{{ t.label }}</span></sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:20px;right:20px;bottom:90px;background:#2B2219;color:#FBF8F2;border-radius:12px;padding:12px 14px;font-size:14px;text-align:center">{{ toast }}</div></sc-if>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SEG = [
+  ["Ry rahalahy sy anabavy, andao hosokafantsika ny 1 Korintiana toko faha-13.","Frères et sœurs, ouvrons 1 Corinthiens, chapitre 13.","Brothers and sisters, let us open 1 Corinthians, chapter 13."],
+  ["Na dia miteny amin'ny fitenin'ny olona sy ny anjely aza aho…","Quand je parlerais les langues des hommes et des anges…","Though I speak with the tongues of men and of angels…"],
+  ["…nefa tsy manana fitiavana, dia efa tonga varahina maneno aho.","…si je n'ai pas l'amour, je suis un airain qui résonne.","…and have not love, I am become as sounding brass."],
+  ["Ny fitiavana mahari-pery sady malemy fanahy.","L'amour est patient, il est plein de bonté.","Love is patient, love is kind."],
+  ["Ary ankehitriny dia mitoetra ireto telo ireto: finoana, fanantenana, fitiavana.","Maintenant ces trois choses demeurent : la foi, l'espérance, l'amour.","And now abide faith, hope, love, these three."],
+  ["Fa ny fitiavana no lehibe indrindra.","Mais la plus grande de ces choses, c'est l'amour.","But the greatest of these is love."]
+];
+const LANGS = [["mg","Malagasy",0],["fr","Français",1],["en","English",2]];
+const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60; return (h ? h + ":" + String(m).padStart(2,"0") : m) + ":" + String(x).padStart(2,"0"); };
+
+class Component extends DCLogic {
+  state = { screen: "home", lang: "fr", shown: 2, t: 1458, viewers: 148, followed: true, offline: false, toast: null,
+    lib: [
+      { id: "s0", title: "Ny fitiavana tsy mety ho levona", meta: "Aujourd'hui · 1 h 12", dur: 4324, dl: null },
+      { id: "s1", title: "Ilay mpiandry tsara", meta: "28 sept. · 58 min", dur: 3480, dl: 100 },
+      { id: "s2", title: "Fanantenana velona", meta: "21 sept. · 46 min", dur: 2760, dl: null },
+      { id: "s3", title: "Ny vavaka mahery", meta: "14 sept. · 51 min", dur: 3060, dl: 100 }
+    ], playing: null, pos: 0, playingOn: false };
+
+  componentDidMount() {
+    this.iv = setInterval(() => this.setState(s => {
+      const n = { t: s.t + 1, viewers: s.viewers + (Math.random() < .3 ? 1 : 0) };
+      if (s.t % 4 === 0) n.shown = s.shown >= SEG.length ? 2 : s.shown + 1;
+      if (s.lib.some(i => i.dl !== null && i.dl < 100)) n.lib = s.lib.map(i => i.dl !== null && i.dl < 100 ? { ...i, dl: Math.min(100, i.dl + 12) } : i);
+      if (s.playingOn && s.playing) { const it = s.lib.find(i => i.id === s.playing); n.pos = Math.min(it.dur, s.pos + 10); }
+      return n;
+    }), 1000);
+  }
+  componentWillUnmount() { clearInterval(this.iv); clearTimeout(this.tt); }
+  flash(msg) { clearTimeout(this.tt); this.setState({ toast: msg }); this.tt = setTimeout(() => this.setState({ toast: null }), 2200); }
+  go(screen) { this.setState({ screen }); }
+
+  renderVals() {
+    const s = this.state, li = LANGS.find(l => l[0] === s.lang)[2];
+    const segs = SEG.slice(0, s.shown).map((g, i) => ({ text: g[li], orig: g[0], time: fmt(1400 + i * 13) }));
+    const cur = segs[segs.length - 1];
+    const prev = segs.slice(-3, -1).map((p, i, a) => ({ ...p, opacity: i === a.length - 1 ? .75 : .5 }));
+    const it = s.lib.find(i => i.id === s.playing) || s.lib[1];
+    const steps = [["Accueil","home"],["Page de l'église","church"],["Direct traduit","live"],["Bibliothèque & téléchargement","library"],["Lecture hors connexion","player"]]
+      .map(([label, sc], i) => ({ n: i + 1, label, bg: s.screen === sc ? "#F4E6CF" : "transparent", onClick: () => sc === "player" ? this.setState({ screen: "player", playing: "s1", offline: true, pos: 1458 }) : this.go(sc) }));
+    return {
+      steps, netIcon: s.offline ? "✈ ▮" : "●●● ▮",
+      isHome: s.screen === "home", isChurch: s.screen === "church", isLive: s.screen === "live", isLibrary: s.screen === "library", isPlayer: s.screen === "player",
+      showTabs: ["home","church","library"].includes(s.screen),
+      tabs: [["Accueil","home"],["Bibliothèque","library"],["Profil",null]].map(([label, sc]) => ({ label, color: (s.screen === sc || (sc === "home" && s.screen === "church")) ? "#2B2219" : "#75685A", weight: s.screen === sc ? 700 : 500, onClick: () => sc ? this.go(sc) : this.flash("Profil : voir maquette 3a-03") })),
+      goHome: () => this.go("home"), goChurch: () => this.go("church"), goLibrary: () => this.go("library"),
+      goLive: () => s.offline ? this.flash("Direct indisponible hors connexion") : this.go("live"),
+      viewers: s.viewers, members: s.followed ? 312 : 311, liveClock: fmt(s.t),
+      followLabel: s.followed ? "✓ Suivie" : "Suivre", followBg: s.followed ? "#B9792A" : "transparent", followColor: s.followed ? "#fff" : "#9A6220",
+      toggleFollow: () => { this.setState({ followed: !s.followed }); this.flash(s.followed ? "Vous ne suivez plus cette église" : "Vous recevrez les notifications de direct"); },
+      langs: LANGS.map(([k, label]) => ({ label, bg: s.lang === k ? "#2B2219" : "transparent", color: s.lang === k ? "#FBF8F2" : "#4D4134", border: s.lang === k ? "#2B2219" : "#DCD1BD", onClick: () => this.setState({ lang: k }) })),
+      prevLines: prev, cur, showOriginal: s.lang !== "mg",
+      offline: s.offline, toggleBg: s.offline ? "#B9792A" : "#DCD1BD", knobLeft: s.offline ? "21px" : "3px",
+      toggleOffline: () => this.setState({ offline: !s.offline }),
+      library: s.lib.map(i => {
+        const done = i.dl === 100, loading = i.dl !== null && !done;
+        return { title: i.title, meta: i.meta + " · MG FR EN", opacity: s.offline && !done ? .4 : 1,
+          status: done ? "✓" : loading ? i.dl + "%" : "↓",
+          bg: done ? "#5E7F4E" : "transparent", color: done ? "#fff" : "#2B2219", border: done ? "#5E7F4E" : loading ? "#B9792A" : "#DCD1BD",
+          onAction: () => { if (done || loading) return; if (s.offline) return this.flash("Connexion requise pour télécharger"); this.setState(st => ({ lib: st.lib.map(x => x.id === i.id ? { ...x, dl: 0 } : x) })); },
+          onOpen: () => { if (s.offline && !done) return this.flash("Disponible après téléchargement"); this.setState({ screen: "player", playing: i.id, pos: 0, playingOn: true }); } };
+      }),
+      playerTitle: it.title, playerSource: it.dl === 100 ? "Téléchargée sur le téléphone" : "Streaming",
+      pct: (s.pos / it.dur * 100).toFixed(1) + "%", posLabel: fmt(s.pos), durLabel: fmt(it.dur),
+      playIcon: s.playingOn ? "❚❚" : "▶", togglePlay: () => this.setState({ playingOn: !s.playingOn }),
+      back15: () => this.setState({ pos: Math.max(0, s.pos - 15) }), fwd15: () => this.setState({ pos: Math.min(it.dur, s.pos + 15) }),
+      langName: LANGS.find(l => l[0] === s.lang)[1], playerLine: SEG[Math.floor(s.pos / 60) % SEG.length][li],
+      cycleLang: () => this.setState({ lang: LANGS[(li + 1) % 3][0] }),
+      toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

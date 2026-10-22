@@ -1,0 +1,18 @@
+# Configuration LiveKit (dev). Clé/secret identiques à LIVEKIT_API_KEY / LIVEKIT_API_SECRET du .env
+port: 7880
+log_level: info
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 50100
+  use_external_ip: false
+redis:
+  address: redis:6379
+keys:
+  devkey: devsecret-change-me-at-least-32-characters
+room:
+  empty_timeout: 120
+webhook:
+  api_key: devkey
+  urls:
+    - http://api:3000/api/v1/webhooks/livekit

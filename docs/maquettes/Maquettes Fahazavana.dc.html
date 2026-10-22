@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#EFE8DB;font-family:Figtree,sans-serif;color:#2B2219;-webkit-font-smoothing:antialiased}a{color:#9A6220}a:hover{color:#7A4A12}*{box-sizing:border-box}</style>
+</helmet>
+<section id="3a" style="padding:80px 80px 0;display:flex;flex-direction:column;gap:96px;width:max-content">
+<div style="display:flex;flex-direction:column;gap:12px;max-width:900px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:#2B2219;color:#FBF8F2;font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px">3a</span><span style="font-size:14px;color:#75685A;letter-spacing:.04em;text-transform:uppercase">Contenus, réglages et cas limites · 6 écrans</span></div>
+<h1 style="font-family:Newsreader,serif;font-weight:500;font-size:56px;line-height:1.05;margin:0">Explorer, archives et sécurité</h1>
+<p style="font-size:19px;line-height:1.5;color:#75685A;margin:0;text-wrap:pretty">Recherche d'églises, fiche d'une prédication avec sa transcription, réglages hors connexion, blocage d'un direct par quota, archives côté admin et journal des actions sensibles. Voir aussi <a href="#2a">2a</a> et <a href="#1a">1a</a>.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Membre / Spectateur</h2><span style="font-size:16px;color:#75685A">Mobile Flutter</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Explorer les églises</span>
+<div data-screen-label="3a-01 Membre explorer" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>9:44</span><span>●●● ▮</span></div>
+<div style="padding:10px 22px;display:flex;flex-direction:column;gap:16px;flex:1">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;margin:0">Explorer</h3>
+<div style="height:48px;border:2px solid #B9792A;border-radius:14px;background:#fff;padding:0 14px;display:flex;align-items:center;gap:10px;font-size:16px"><span style="color:#75685A">⌕</span>fitia</div>
+<div style="display:flex;gap:8px"><span style="padding:8px 13px;border-radius:20px;background:#2B2219;color:#FBF8F2;font-size:13px;font-weight:600">Antananarivo</span><span style="padding:8px 13px;border-radius:20px;border:1px solid #DCD1BD;font-size:13px">En direct</span><span style="padding:8px 13px;border-radius:20px;border:1px solid #DCD1BD;font-size:13px">Traduit en FR</span></div>
+<span style="font-size:13px;color:#75685A">3 églises</span>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #EFE7D9"><span style="width:52px;height:52px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:22px;outline:2px solid #C2502F;outline-offset:2px;flex-shrink:0">T</span><div style="display:flex;flex-direction:column;gap:3px;flex:1"><span style="font-size:15px;font-weight:600">Tempoly Fitiavana</span><span style="font-size:13px;color:#C2502F;font-weight:600">● En direct maintenant</span></div><span style="font-size:13px;color:#5E7F4E;font-weight:600">Suivie</span></div>
+<div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #EFE7D9"><span style="width:52px;height:52px;border-radius:50%;background:#F4E6CF;color:#9A6220;display:grid;place-items:center;font-family:Newsreader,serif;font-size:22px;flex-shrink:0">F</span><div style="display:flex;flex-direction:column;gap:3px;flex:1"><span style="font-size:15px;font-weight:600">FJKM Fitiavana Isotry</span><span style="font-size:13px;color:#75685A">184 membres · MG → FR</span></div><span style="height:34px;padding:0 14px;border-radius:9px;border:1px solid #DCD1BD;display:flex;align-items:center;font-size:14px;font-weight:600">Suivre</span></div>
+<div style="display:flex;gap:12px;align-items:center;padding:14px 0"><span style="width:52px;height:52px;border-radius:50%;background:#F4E6CF;color:#9A6220;display:grid;place-items:center;font-family:Newsreader,serif;font-size:22px;flex-shrink:0">F</span><div style="display:flex;flex-direction:column;gap:3px;flex:1"><span style="font-size:15px;font-weight:600">Fitiavana Ivandry</span><span style="font-size:13px;color:#75685A">96 membres · MG → FR, EN</span></div><span style="height:34px;padding:0 14px;border-radius:9px;border:1px solid #DCD1BD;display:flex;align-items:center;font-size:14px;font-weight:600">Suivre</span></div>
+</div>
+</div>
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(4,1fr);font-size:12px;color:#75685A;text-align:center;align-items:center"><span>Accueil</span><span style="color:#2B2219;font-weight:600">Explorer</span><span>Bibliothèque</span><span>Profil</span></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Fiche prédication · transcription</span>
+<div data-screen-label="3a-02 Membre fiche prédication" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>12:10</span><span>●●● ▮</span></div>
+<div style="padding:6px 22px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px">←</span><span style="font-size:14px;color:#9A6220;font-weight:600">Partager</span></div>
+<div style="padding:10px 22px;display:flex;flex-direction:column;gap:14px;flex:1;overflow:hidden">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:Newsreader,serif;font-size:26px;line-height:1.15">Ny fitiavana tsy mety ho levona</span><span style="font-size:14px;color:#75685A">Pasteur Hery · 5 oct. 2026 · 1 h 12</span></div>
+<div style="display:flex;gap:10px"><div style="flex:1;height:48px;border-radius:14px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px">▶ Écouter</div><div style="flex:1;height:48px;border-radius:14px;border:1px solid #DCD1BD;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px">↓ Télécharger</div></div>
+<div style="display:flex;border-bottom:1px solid #E6DDCC;gap:20px;font-size:15px"><span style="padding:10px 0;border-bottom:2px solid #2B2219;font-weight:600">Transcription</span><span style="padding:10px 0;color:#75685A">À propos</span></div>
+<div style="display:flex;gap:6px"><span style="padding:7px 12px;border-radius:20px;border:1px solid #DCD1BD;font-size:13px">Malagasy</span><span style="padding:7px 12px;border-radius:20px;background:#F4E6CF;color:#7A4A12;font-size:13px;font-weight:600">Français</span><span style="padding:7px 12px;border-radius:20px;border:1px solid #DCD1BD;font-size:13px">English</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:12px"><span style="font-size:12px;color:#9A6220;font-weight:600;width:38px;flex-shrink:0;padding-top:3px">00:42</span><p style="margin:0;font-size:15px;line-height:1.5">Frères et sœurs, ouvrons nos Bibles à la première lettre aux Corinthiens, chapitre treize.</p></div>
+<div style="display:flex;gap:12px"><span style="font-size:12px;color:#9A6220;font-weight:600;width:38px;flex-shrink:0;padding-top:3px">01:15</span><p style="margin:0;font-size:15px;line-height:1.5">Quand je parlerais les langues des hommes et des anges, si je n'ai pas l'amour, je suis un airain qui résonne.</p></div>
+<div style="display:flex;gap:12px"><span style="font-size:12px;color:#9A6220;font-weight:600;width:38px;flex-shrink:0;padding-top:3px">02:03</span><p style="margin:0;font-size:15px;line-height:1.5">L'amour est patient, il est plein de bonté ; l'amour n'est point envieux.</p></div>
+<div style="display:flex;gap:12px;opacity:.5"><span style="font-size:12px;color:#9A6220;font-weight:600;width:38px;flex-shrink:0;padding-top:3px">02:40</span><p style="margin:0;font-size:15px;line-height:1.5">Il ne cherche point son intérêt, il ne s'irrite point…</p></div>
+</div>
+</div>
+<div style="padding:10px 22px 20px;font-size:12px;color:#75685A;border-top:1px solid #E6DDCC">Transcrite et traduite automatiquement par IA</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Profil · hors connexion</span>
+<div data-screen-label="3a-03 Membre profil" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>12:30</span><span>●●● ▮</span></div>
+<div style="padding:10px 22px;display:flex;flex-direction:column;gap:20px;flex:1">
+<div style="display:flex;gap:14px;align-items:center"><span style="width:56px;height:56px;border-radius:50%;background:#F4E6CF;display:grid;place-items:center;font-weight:600;color:#9A6220;font-size:18px">FR</span><div style="display:flex;flex-direction:column"><span style="font-family:Newsreader,serif;font-size:24px">Fanja Randria</span><span style="font-size:14px;color:#75685A">fanja@gmail.com</span></div></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="font-weight:600">Stockage sur le téléphone</span><span>412 Mo</span></div>
+<div style="height:8px;background:#E6DDCC;border-radius:4px;display:flex;overflow:hidden"><div style="width:22%;background:#B9792A"></div><div style="width:9%;background:#5E7F4E"></div></div>
+<div style="display:flex;gap:16px;font-size:13px;color:#75685A"><span style="display:flex;gap:6px;align-items:center"><span style="width:8px;height:8px;border-radius:2px;background:#B9792A"></span>Vidéo 344 Mo</span><span style="display:flex;gap:6px;align-items:center"><span style="width:8px;height:8px;border-radius:2px;background:#5E7F4E"></span>Audio 68 Mo</span></div>
+</div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Langue de traduction</span><span style="color:#75685A">Français ›</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Télécharger en Wi-Fi uniquement</span><span style="width:44px;height:26px;border-radius:13px;background:#B9792A;position:relative"><span style="position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff"></span></span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Format par défaut</span><span style="color:#75685A">Audio ›</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 16px;font-size:15px"><span>Notifications de direct</span><span style="width:44px;height:26px;border-radius:13px;background:#B9792A;position:relative"><span style="position:absolute;right:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff"></span></span></div>
+</div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:15px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Églises suivies</span><span style="color:#75685A">2 ›</span></div>
+<div style="padding:15px 16px;font-size:15px;color:#C2502F;font-weight:500">Se déconnecter</div>
+</div>
+</div>
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(4,1fr);font-size:12px;color:#75685A;text-align:center;align-items:center"><span>Accueil</span><span>Explorer</span><span>Bibliothèque</span><span style="color:#2B2219;font-weight:600">Profil</span></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Prédicateur</h2><span style="font-size:16px;color:#75685A">Mobile Flutter</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Direct bloqué par le quota</span>
+<div data-screen-label="3a-04 Prédicateur quota" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column;position:relative">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>8:55</span><span>●●● ▮</span></div>
+<div style="padding:16px 22px;display:flex;flex-direction:column;gap:16px;opacity:.35">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;margin:0">Nouveau direct</h3>
+<div style="height:170px;border-radius:16px;background:repeating-linear-gradient(135deg,#EDE4D3 0 10px,#E5D9C3 10px 20px)"></div>
+<div style="height:48px;border:1px solid #DCD1BD;border-radius:12px;background:#fff"></div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;background:#FBF8F2;border-radius:28px 28px 0 0;box-shadow:0 -12px 40px rgba(43,34,25,.18);padding:14px 24px 30px;display:flex;flex-direction:column;gap:16px">
+<span style="width:40px;height:5px;border-radius:3px;background:#DCD1BD;align-self:center"></span>
+<span style="width:48px;height:48px;border-radius:50%;background:#F8E3DA;color:#C2502F;display:grid;place-items:center;font-size:22px;font-weight:700">!</span>
+<h4 style="font-family:Newsreader,serif;font-weight:500;font-size:26px;line-height:1.15;margin:0">Quota de direct épuisé</h4>
+<p style="margin:0;font-size:15px;line-height:1.5;color:#4D4134">Tempoly Fitiavana a utilisé ses 50 h de direct ce mois. Le compteur repart le 1er novembre.</p>
+<div style="display:flex;justify-content:space-between;font-size:14px;background:#fff;border:1px solid #E6DDCC;border-radius:12px;padding:12px 14px"><span style="color:#75685A">Direct</span><span style="font-weight:600;color:#C2502F">50 / 50 h</span></div>
+<div style="height:52px;border-radius:14px;background:#2B2219;color:#FBF8F2;display:grid;place-items:center;font-weight:600;font-size:16px">Prévenir l'administrateur</div>
+<div style="height:48px;border-radius:14px;border:1px solid #DCD1BD;display:grid;place-items:center;font-weight:600;font-size:15px">Enregistrer sans diffuser</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Church Admin & Super Admin</h2><span style="font-size:16px;color:#75685A">Web · desktop</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Church Admin · Prédications archivées</span>
+<div data-screen-label="3a-05 Admin prédications" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#F3ECDF;border-right:1px solid #E6DDCC;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;gap:10px;align-items:center;padding:0 10px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:18px">T</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">Tempoly Fitiavana</span><span style="font-size:12px;color:#75685A">Plan Standard</span></div></div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Tableau de bord</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:#FBF8F2;font-weight:600;box-shadow:0 1px 0 #E6DDCC">Prédications</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Directs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédicateurs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Membres</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Abonnement</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:baseline;gap:14px"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Prédications</h3><span style="font-size:15px;color:#75685A">35 · 31,2 Go</span></div><div style="display:flex;gap:10px"><div style="height:42px;padding:0 16px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-size:14px;font-weight:600">Tous les prédicateurs ▾</div><div style="height:42px;padding:0 18px;border-radius:10px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-weight:600;font-size:14px">+ Importer</div></div></div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:2.2fr 1.2fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Titre</span><span>Prédicateur</span><span>Durée</span><span>Transcription MG</span><span>Français</span><span>Anglais</span><span>Taille</span></div>
+<div style="display:grid;grid-template-columns:2.2fr 1.2fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Ny fitiavana tsy mety ho levona</span><span>Pasteur Hery</span><span>1 h 12</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#9A6220;font-weight:500">78 %</span><span>1,4 Go</span></div>
+<div style="display:grid;grid-template-columns:2.2fr 1.2fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Ilay mpiandry tsara</span><span>Pasteur Hery</span><span>58 min</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span>1,1 Go</span></div>
+<div style="display:grid;grid-template-columns:2.2fr 1.2fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Fanantenana velona</span><span>Mpit. Voahangy</span><span>46 min</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#A69886">Non demandée</span><span>0,9 Go</span></div>
+<div style="display:grid;grid-template-columns:2.2fr 1.2fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Ny vavaka mahery</span><span>Pasteur Hery</span><span>51 min</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span>1,0 Go</span></div>
+<div style="display:grid;grid-template-columns:2.2fr 1.2fr 0.8fr 1fr 1fr 1fr 0.8fr;padding:15px 20px;font-size:15px;align-items:center"><span>Ny finoana sy ny asa</span><span>Pasteur Hery</span><span>49 min</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span style="color:#C2502F;font-weight:500">Échec · Relancer</span><span style="color:#A69886">En attente</span><span>0,9 Go</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Super Admin · Journal d'activité</span>
+<div data-screen-label="3a-06 Super Admin journal" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#2B2219;color:#E8D9C2;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;align-items:center;gap:10px;padding:0 10px 24px"><span style="width:26px;height:26px;border-radius:50%;background:#B9792A"></span><span style="font-family:Newsreader,serif;font-size:22px;color:#FBF8F2">Fahazavana</span></div>
+<div style="padding:10px 12px;font-size:15px">Églises</div>
+<div style="padding:10px 12px;font-size:15px">Plans</div>
+<div style="padding:10px 12px;font-size:15px">Abonnements</div>
+<div style="padding:10px 12px;font-size:15px">Paiements</div>
+<div style="padding:10px 12px;font-size:15px">Consommation IA</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:rgba(251,248,242,.1);color:#FBF8F2;font-weight:600">Journal d'activité</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Journal d'activité</h3><div style="display:flex;gap:10px"><div style="height:42px;padding:0 16px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-size:14px;font-weight:600">Toutes les églises ▾</div><div style="height:42px;padding:0 16px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-size:14px;font-weight:600">Accès refusés ▾</div></div></div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr 2.4fr 0.9fr;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Date</span><span>Utilisateur</span><span>Rôle</span><span>Action</span><span>Résultat</span></div>
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr 2.4fr 0.9fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span style="color:#75685A">05/10 · 10:01</span><span>Pasteur Hery</span><span>Prédicateur</span><span>Démarrage d'un direct · Tempoly Fitiavana</span><span style="color:#5E7F4E;font-weight:500">Autorisé</span></div>
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr 2.4fr 0.9fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center;background:#FDF3EE"><span style="color:#75685A">05/10 · 09:47</span><span>Mpit. Voahangy</span><span>Prédicateur</span><span>Modification d'une prédication · FJKM Ambohitantely</span><span style="color:#C2502F;font-weight:600">Refusé</span></div>
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr 2.4fr 0.9fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span style="color:#75685A">05/10 · 09:12</span><span>Rasoa Andrianina</span><span>Church Admin</span><span>Création du prédicateur Andrianaivo Tojo</span><span style="color:#5E7F4E;font-weight:500">Autorisé</span></div>
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr 2.4fr 0.9fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center;background:#FDF3EE"><span style="color:#75685A">04/10 · 18:30</span><span>Église Fanilo</span><span>Système</span><span>Démarrage d'un direct · quota de direct dépassé</span><span style="color:#C2502F;font-weight:600">Bloqué</span></div>
+<div style="display:grid;grid-template-columns:1fr 1.4fr 1fr 2.4fr 0.9fr;padding:15px 20px;font-size:15px;align-items:center"><span style="color:#75685A">04/10 · 16:05</span><span>Rasoa Andrianina</span><span>Church Admin</span><span>Blocage du membre x9_promo@mail.ru</span><span style="color:#5E7F4E;font-weight:500">Autorisé</span></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+<section id="2a" style="padding:80px 80px 0;display:flex;flex-direction:column;gap:96px;width:max-content">
+<div style="display:flex;flex-direction:column;gap:12px;max-width:900px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:#2B2219;color:#FBF8F2;font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px">2a</span><span style="font-size:14px;color:#75685A;letter-spacing:.04em;text-transform:uppercase">Écrans complémentaires du MVP · 8 écrans</span></div>
+<h1 style="font-family:Newsreader,serif;font-weight:500;font-size:56px;line-height:1.05;margin:0">Accueils, comptes et quotas</h1>
+<p style="font-size:19px;line-height:1.5;color:#75685A;margin:0;text-wrap:pretty">Écrans hors scénario nécessaires au MVP : authentification, accueils, gestion des membres, abonnement et plans. Le scénario de démo est en <a href="#1a">1a</a>.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Membre / Spectateur</h2><span style="font-size:16px;color:#75685A">Mobile Flutter</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Inscription</span>
+<div data-screen-label="2a-01 Membre inscription" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>9:41</span><span>●●● ▮</span></div>
+<div style="padding:20px 26px 24px;display:flex;flex-direction:column;gap:16px;flex:1">
+<span style="width:44px;height:44px;border-radius:50%;background:#B9792A"></span>
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:34px;line-height:1.1;margin:0">Bienvenue sur Fahazavana</h3>
+<p style="margin:0;font-size:16px;line-height:1.45;color:#75685A">Suivez votre église, regardez les directs dans votre langue et gardez les prédications sur votre téléphone.</p>
+<div style="display:flex;flex-direction:column;gap:6px;margin-top:8px"><label style="font-size:13px;color:#75685A;font-weight:500">Nom</label><div style="height:50px;border:1px solid #DCD1BD;border-radius:12px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:16px">Fanja Randria</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Email</label><div style="height:50px;border:1px solid #DCD1BD;border-radius:12px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:16px">fanja@gmail.com</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Mot de passe</label><div style="height:50px;border:2px solid #B9792A;border-radius:12px;background:#fff;padding:0 13px;display:flex;align-items:center;font-size:18px;letter-spacing:.2em">••••••••</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:13px;color:#75685A;font-weight:500">Langue préférée pour les traductions</label><div style="display:flex;gap:8px"><span style="padding:9px 14px;border-radius:20px;border:1px solid #DCD1BD;font-size:14px">Malagasy</span><span style="padding:9px 14px;border-radius:20px;background:#2B2219;color:#FBF8F2;font-size:14px;font-weight:600">Français</span><span style="padding:9px 14px;border-radius:20px;border:1px solid #DCD1BD;font-size:14px">English</span></div></div>
+<div style="margin-top:auto;height:54px;border-radius:16px;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px">Créer mon compte</div>
+<span style="text-align:center;font-size:14px;color:#75685A">Déjà inscrit ? <span style="color:#9A6220;font-weight:600">Se connecter</span></span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Accueil</span>
+<div data-screen-label="2a-02 Membre accueil" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>10:04</span><span>●●● ▮</span></div>
+<div style="padding:10px 22px;display:flex;flex-direction:column;gap:18px;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;margin:0">Manao ahoana, Fanja</h3><span style="position:relative;font-size:18px">🔔<span style="position:absolute;top:-2px;right:-4px;width:9px;height:9px;border-radius:50%;background:#C2502F"></span></span></div>
+<div style="border-radius:18px;overflow:hidden;background:#fff;border:1px solid #E6DDCC">
+<div style="height:150px;background:repeating-linear-gradient(135deg,#4A3A2A 0 12px,#433424 12px 24px);position:relative;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#C9B89E">vignette du direct<span style="position:absolute;top:10px;left:10px;background:#C2502F;color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:700">EN DIRECT</span></div>
+<div style="padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Ny fitiavana tsy mety ho levona</span><span style="font-size:13px;color:#75685A">Tempoly Fitiavana · 149 spectateurs</span></div><span style="height:38px;padding:0 14px;border-radius:10px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-size:14px;font-weight:600">Rejoindre</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em">Églises suivies</span>
+<div style="display:flex;gap:14px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:72px"><span style="width:60px;height:60px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:24px;outline:2px solid #C2502F;outline-offset:2px">T</span><span style="font-size:12px;text-align:center">Fitiavana</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:72px"><span style="width:60px;height:60px;border-radius:50%;background:#F4E6CF;color:#9A6220;display:grid;place-items:center;font-family:Newsreader,serif;font-size:24px">A</span><span style="font-size:12px;text-align:center">Ambohitantely</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:72px"><span style="width:60px;height:60px;border-radius:50%;border:1px dashed #C9B89E;color:#9A6220;display:grid;place-items:center;font-size:24px">+</span><span style="font-size:12px;text-align:center">Explorer</span></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em">Reprendre l'écoute</span>
+<div style="display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;display:grid;place-items:center;color:#9A6220">▶</div><div style="display:flex;flex-direction:column;gap:5px;flex:1"><span style="font-size:15px;font-weight:600">Ilay mpiandry tsara</span><div style="height:4px;background:#E6DDCC;border-radius:2px"><div style="width:55%;height:100%;background:#B9792A;border-radius:2px"></div></div><span style="font-size:12px;color:#75685A">26 min restantes · téléchargée</span></div></div>
+</div>
+</div>
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(4,1fr);font-size:12px;color:#75685A;text-align:center;align-items:center"><span style="color:#2B2219;font-weight:600">Accueil</span><span>Explorer</span><span>Bibliothèque</span><span>Profil</span></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Notifications</span>
+<div data-screen-label="2a-03 Membre notifications" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>10:05</span><span>●●● ▮</span></div>
+<div style="padding:10px 22px;display:flex;flex-direction:column;gap:14px;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;margin:0">Notifications</h3><span style="font-size:14px;color:#9A6220;font-weight:600">Tout lire</span></div>
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em;margin-top:6px">Aujourd'hui</span>
+<div style="display:flex;gap:12px;padding:14px;border-radius:14px;background:#FFF8EC;border:1px solid #F0DDBE"><span style="width:10px;height:10px;border-radius:50%;background:#C2502F;margin-top:6px;flex-shrink:0"></span><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Tempoly Fitiavana est en direct</span><span style="font-size:14px;color:#4D4134;line-height:1.4">Pasteur Hery · Ny fitiavana tsy mety ho levona</span><span style="font-size:12px;color:#75685A">il y a 3 min</span></div></div>
+<div style="display:flex;gap:12px;padding:14px;border-radius:14px;background:#FFF8EC;border:1px solid #F0DDBE"><span style="width:10px;height:10px;border-radius:50%;background:#B9792A;margin-top:6px;flex-shrink:0"></span><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Nouvelle prédication disponible</span><span style="font-size:14px;color:#4D4134;line-height:1.4">FJKM Ambohitantely · Ny fahamarinana</span><span style="font-size:12px;color:#75685A">il y a 2 h</span></div></div>
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em;margin-top:6px">Cette semaine</span>
+<div style="display:flex;gap:12px;padding:14px 4px;border-bottom:1px solid #EFE7D9"><span style="width:10px;flex-shrink:0"></span><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px">Téléchargement terminé</span><span style="font-size:14px;color:#75685A">Ilay mpiandry tsara · audio · 34 Mo</span></div></div>
+<div style="display:flex;gap:12px;padding:14px 4px;border-bottom:1px solid #EFE7D9"><span style="width:10px;flex-shrink:0"></span><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px">Traduction anglaise disponible</span><span style="font-size:14px;color:#75685A">Fanantenana velona</span></div></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Prédicateur</h2><span style="font-size:16px;color:#75685A">Mobile Flutter</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Accueil prédicateur</span>
+<div data-screen-label="2a-04 Prédicateur accueil" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>9:30</span><span>●●● ▮</span></div>
+<div style="padding:10px 22px;display:flex;flex-direction:column;gap:18px;flex:1">
+<div style="display:flex;gap:12px;align-items:center"><span style="width:48px;height:48px;border-radius:50%;background:#F4E6CF;display:grid;place-items:center;font-weight:600;color:#9A6220">RH</span><div style="display:flex;flex-direction:column"><span style="font-size:16px;font-weight:600">Pasteur Rakotomalala Hery</span><span style="font-size:13px;color:#75685A">Tempoly Fitiavana</span></div></div>
+<div style="background:#2B2219;color:#FBF8F2;border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px">
+<span style="font-family:Newsreader,serif;font-size:24px;line-height:1.2">Prêt pour le culte de 9 h ?</span>
+<span style="font-size:14px;color:#D9C8AE">Direct : 29 h restantes ce mois</span>
+<div style="height:50px;border-radius:14px;background:#C2502F;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px"><span style="width:10px;height:10px;border-radius:50%;background:#fff"></span>Nouveau direct</div>
+</div>
+<div style="height:48px;border-radius:14px;border:1px solid #DCD1BD;display:grid;place-items:center;font-weight:600;font-size:15px">+ Importer une prédication enregistrée</div>
+<div style="display:flex;flex-direction:column;gap:2px">
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Mes prédications</span>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #EFE7D9"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Ilay mpiandry tsara</span><span style="font-size:13px;color:#75685A">28 sept. · 1 840 écoutes</span></div><span style="font-size:12px;color:#5E7F4E;font-weight:600">MG FR EN</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #EFE7D9"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Ny vavaka mahery</span><span style="font-size:13px;color:#75685A">14 sept. · 1 210 écoutes</span></div><span style="font-size:12px;color:#5E7F4E;font-weight:600">MG FR EN</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:15px;font-weight:600">Ny finoana sy ny asa</span><span style="font-size:13px;color:#75685A">7 sept. · 980 écoutes</span></div><span style="font-size:12px;color:#9A6220;font-weight:600">Traduction…</span></div>
+</div>
+</div>
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(3,1fr);font-size:12px;color:#75685A;text-align:center;align-items:center"><span style="color:#2B2219;font-weight:600">Accueil</span><span>Prédications</span><span>Profil</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Church Admin</h2><span style="font-size:16px;color:#75685A">Web · desktop</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Tableau de bord</span>
+<div data-screen-label="2a-05 Admin tableau de bord" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#F3ECDF;border-right:1px solid #E6DDCC;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;gap:10px;align-items:center;padding:0 10px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:18px">T</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">Tempoly Fitiavana</span><span style="font-size:12px;color:#75685A">Plan Standard</span></div></div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:#FBF8F2;font-weight:600;box-shadow:0 1px 0 #E6DDCC">Tableau de bord</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédications</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Directs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédicateurs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Membres</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Abonnement</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:24px">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Tableau de bord</h3>
+<div style="background:#2B2219;color:#FBF8F2;border-radius:16px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;gap:16px;align-items:center"><span style="background:#C2502F;padding:5px 10px;border-radius:6px;font-size:13px;font-weight:700">EN DIRECT</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:600">Ny fitiavana tsy mety ho levona</span><span style="font-size:14px;color:#D9C8AE">Pasteur Hery · depuis 24 min · 149 spectateurs</span></div></div>
+<span style="font-size:14px;color:#E5C48E;font-weight:600">FR 61 % · EN 12 % · MG 27 %</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;color:#75685A">Direct</span><span style="font-family:Newsreader,serif;font-size:32px">21 <span style="font-size:18px;color:#75685A">/ 50 h</span></span><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:42%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;color:#75685A">Transcription & traduction IA</span><span style="font-family:Newsreader,serif;font-size:32px">19 <span style="font-size:18px;color:#75685A">/ 50 h</span></span><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:38%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;color:#75685A">Stockage</span><span style="font-family:Newsreader,serif;font-size:32px">18,4 <span style="font-size:18px;color:#75685A">/ 50 Go</span></span><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:37%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;color:#75685A">Membres</span><span style="font-family:Newsreader,serif;font-size:32px">312 <span style="font-size:18px;color:#75685A">/ 500</span></span><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:62%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+</div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="padding:16px 20px;border-bottom:1px solid #E6DDCC;display:flex;justify-content:space-between"><span style="font-weight:600;font-size:16px">Dernières prédications</span><span style="font-size:14px;color:#9A6220;font-weight:600">Tout voir</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1fr 1fr;padding:12px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #F0E9DC"><span>Titre</span><span>Prédicateur</span><span>Durée</span><span>Langues</span><span>Écoutes</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1fr 1fr;padding:14px 20px;font-size:15px;border-bottom:1px solid #F0E9DC"><span>Ilay mpiandry tsara</span><span>Pasteur Hery</span><span>58 min</span><span>MG FR EN</span><span>1 840</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1fr 1fr;padding:14px 20px;font-size:15px;border-bottom:1px solid #F0E9DC"><span>Fanantenana velona</span><span>Mpit. Voahangy</span><span>46 min</span><span>MG FR</span><span>1 320</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.2fr 1fr 1fr 1fr;padding:14px 20px;font-size:15px"><span>Ny vavaka mahery</span><span>Pasteur Hery</span><span>51 min</span><span>MG FR EN</span><span>1 210</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Membres</span>
+<div data-screen-label="2a-06 Admin membres" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#F3ECDF;border-right:1px solid #E6DDCC;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;gap:10px;align-items:center;padding:0 10px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:18px">T</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">Tempoly Fitiavana</span><span style="font-size:12px;color:#75685A">Plan Standard</span></div></div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Tableau de bord</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédications</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Directs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédicateurs</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:#FBF8F2;font-weight:600;box-shadow:0 1px 0 #E6DDCC">Membres</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Abonnement</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:baseline;gap:14px"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Membres</h3><span style="font-size:15px;color:#75685A">312 sur 500</span></div><div style="height:42px;width:280px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:14px;color:#A69886">Rechercher un membre…</div></div>
+<div style="display:flex;gap:8px"><span style="padding:8px 14px;border-radius:20px;background:#2B2219;color:#FBF8F2;font-size:14px;font-weight:600">Tous · 312</span><span style="padding:8px 14px;border-radius:20px;border:1px solid #DCD1BD;font-size:14px">Actifs · 298</span><span style="padding:8px 14px;border-radius:20px;border:1px solid #DCD1BD;font-size:14px">Bloqués · 14</span></div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr 1fr;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Membre</span><span>Email</span><span>Langue</span><span>Suit depuis</span><span>Statut</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Fanja Randria</span><span style="color:#75685A">fanja@gmail.com</span><span>Français</span><span>5 oct. 2026</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Rabe Andry</span><span style="color:#75685A">andry.rabe@yahoo.fr</span><span>Malagasy</span><span>12 août 2026</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Sarah Mitchell</span><span style="color:#75685A">sarah.m@outlook.com</span><span>English</span><span>3 juil. 2026</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Rasoanaivo Lova</span><span style="color:#75685A">lova.r@gmail.com</span><span>Français</span><span>18 juin 2026</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.6fr 1fr 1fr 1fr;padding:15px 20px;font-size:15px;align-items:center"><span>Compte inconnu</span><span style="color:#75685A">x9_promo@mail.ru</span><span>—</span><span>2 juin 2026</span><span style="color:#C2502F;font-weight:500">● Bloqué</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Abonnement — quota atteint</span>
+<div data-screen-label="2a-07 Admin abonnement" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#F3ECDF;border-right:1px solid #E6DDCC;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;gap:10px;align-items:center;padding:0 10px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:18px">T</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">Tempoly Fitiavana</span><span style="font-size:12px;color:#75685A">Plan Standard</span></div></div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Tableau de bord</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédications</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Directs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Prédicateurs</div>
+<div style="padding:10px 12px;font-size:15px;color:#75685A">Membres</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:#FBF8F2;font-weight:600;box-shadow:0 1px 0 #E6DDCC">Abonnement</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:22px">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Abonnement</h3>
+<div style="display:flex;gap:14px;align-items:center;background:#F8E3DA;border:1px solid #E9B9A6;border-radius:14px;padding:16px 20px"><span style="width:32px;height:32px;border-radius:50%;background:#C2502F;color:#fff;display:grid;place-items:center;font-weight:700">!</span><div style="display:flex;flex-direction:column;gap:2px;flex:1"><span style="font-size:16px;font-weight:600">Quota IA atteint à 96 %</span><span style="font-size:14px;color:#4D4134">Au-delà de 50 h, les nouveaux directs seront diffusés sans transcription ni traduction jusqu'au 1er novembre.</span></div><span style="height:42px;padding:0 18px;border-radius:10px;background:#C2502F;color:#fff;display:flex;align-items:center;font-weight:600;font-size:15px">Passer à Premium</span></div>
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:20px">
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-family:Newsreader,serif;font-size:28px">Plan Standard</span><span style="font-size:14px;color:#5E7F4E;font-weight:600">● Actif jusqu'au 31 oct. 2026</span></div>
+<div style="display:flex;flex-direction:column;gap:7px"><div style="display:flex;justify-content:space-between;font-size:15px"><span>Transcription & traduction IA</span><span style="font-weight:600;color:#C2502F">48 / 50 h</span></div><div style="height:7px;background:#E6DDCC;border-radius:4px"><div style="width:96%;height:100%;background:#C2502F;border-radius:4px"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:7px"><div style="display:flex;justify-content:space-between;font-size:15px"><span>Direct</span><span>44 / 50 h</span></div><div style="height:7px;background:#E6DDCC;border-radius:4px"><div style="width:88%;height:100%;background:#B9792A;border-radius:4px"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:7px"><div style="display:flex;justify-content:space-between;font-size:15px"><span>Stockage</span><span>31,2 / 50 Go</span></div><div style="height:7px;background:#E6DDCC;border-radius:4px"><div style="width:62%;height:100%;background:#B9792A;border-radius:4px"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:7px"><div style="display:flex;justify-content:space-between;font-size:15px"><span>Membres</span><span>312 / 500</span></div><div style="height:7px;background:#E6DDCC;border-radius:4px"><div style="width:62%;height:100%;background:#B9792A;border-radius:4px"></div></div></div>
+</div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
+<div style="padding:16px 20px;border-bottom:1px solid #E6DDCC;font-weight:600;font-size:16px">Paiements</div>
+<div style="display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>1er oct. 2026</span><span style="color:#5E7F4E;font-weight:500">Payé</span></div>
+<div style="display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>1er sept. 2026</span><span style="color:#5E7F4E;font-weight:500">Payé</span></div>
+<div style="display:flex;justify-content:space-between;padding:14px 20px;font-size:15px"><span>1er août 2026</span><span style="color:#5E7F4E;font-weight:500">Payé</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Super Admin</h2><span style="font-size:16px;color:#75685A">Web · desktop</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-weight:600;font-size:15px">Gestion des plans</span>
+<div data-screen-label="2a-08 Super Admin plans" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#2B2219;color:#E8D9C2;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;align-items:center;gap:10px;padding:0 10px 24px"><span style="width:26px;height:26px;border-radius:50%;background:#B9792A"></span><span style="font-family:Newsreader,serif;font-size:22px;color:#FBF8F2">Fahazavana</span></div>
+<div style="padding:10px 12px;font-size:15px">Églises</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:rgba(251,248,242,.1);color:#FBF8F2;font-weight:600">Plans</div>
+<div style="padding:10px 12px;font-size:15px">Abonnements</div>
+<div style="padding:10px 12px;font-size:15px">Paiements</div>
+<div style="padding:10px 12px;font-size:15px">Consommation IA</div>
+<div style="padding:10px 12px;font-size:15px">Journal d'activité</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Plans</h3><div style="height:44px;padding:0 20px;border-radius:10px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-weight:600;font-size:15px">+ Nouveau plan</div></div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 0.6fr;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Plan</span><span>Prix / mois</span><span>Stockage</span><span>Direct</span><span>IA</span><span>Membres</span><span>Églises</span></div>
+<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 0.6fr;padding:16px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span style="font-family:Newsreader,serif;font-size:20px">Basic</span><span style="color:#A69886">à définir</span><span>10 Go</span><span>10 h</span><span>10 h</span><span>100</span><span>21</span></div>
+<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 0.6fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center;background:#FFF8EC;box-shadow:inset 3px 0 0 #B9792A"><span style="font-family:Newsreader,serif;font-size:20px">Standard</span><span style="height:38px;border:2px solid #B9792A;border-radius:8px;background:#fff;padding:0 10px;display:flex;align-items:center;margin-right:12px;color:#A69886">Ar …</span><span style="height:38px;border:1px solid #DCD1BD;border-radius:8px;background:#fff;padding:0 10px;display:flex;align-items:center;margin-right:12px">50 Go</span><span style="height:38px;border:1px solid #DCD1BD;border-radius:8px;background:#fff;padding:0 10px;display:flex;align-items:center;margin-right:12px">50 h</span><span style="height:38px;border:1px solid #DCD1BD;border-radius:8px;background:#fff;padding:0 10px;display:flex;align-items:center;margin-right:12px">50 h</span><span style="height:38px;border:1px solid #DCD1BD;border-radius:8px;background:#fff;padding:0 10px;display:flex;align-items:center;margin-right:12px">500</span><span>13</span></div>
+<div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr 0.6fr;padding:16px 20px;font-size:15px;align-items:center"><span style="font-family:Newsreader,serif;font-size:20px">Premium</span><span style="color:#A69886">à définir</span><span>200 Go</span><span>200 h</span><span>200 h</span><span>2 000</span><span>4</span></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:#F4E6CF;border-radius:12px;padding:14px 18px;font-size:14px"><span>Les nouveaux quotas s'appliquent aux 13 églises Standard au prochain renouvellement.</span><div style="display:flex;gap:10px"><span style="height:38px;padding:0 16px;border-radius:9px;border:1px solid #C9B89E;display:flex;align-items:center;font-weight:600">Annuler</span><span style="height:38px;padding:0 16px;border-radius:9px;background:#B9792A;color:#fff;display:flex;align-items:center;font-weight:600">Enregistrer</span></div></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Heures IA consommées · oct.</span><span style="font-family:Newsreader,serif;font-size:32px">412 h</span></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Heures de direct · oct.</span><span style="font-family:Newsreader,serif;font-size:32px">486 h</span></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Stockage total</span><span style="font-family:Newsreader,serif;font-size:32px">1,2 To</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<section id="1a" style="padding:80px;display:flex;flex-direction:column;gap:96px;width:max-content">
+<div style="display:flex;flex-direction:column;gap:12px;max-width:900px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:#2B2219;color:#FBF8F2;font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px">1a</span><span style="font-size:14px;color:#75685A;letter-spacing:.04em;text-transform:uppercase">Flux complet du scénario de démo · 11 écrans · 4 applis</span></div>
+<h1 style="font-family:Newsreader,serif;font-weight:500;font-size:64px;line-height:1.05;margin:0">Fahazavana — maquettes</h1>
+<p style="font-size:19px;line-height:1.5;color:#75685A;margin:0;text-wrap:pretty">Les numéros suivent l'ordre du scénario de démonstration du CDC (§15). Église de démo : Tempoly Fitiavana. Langue source : malagasy, traduite en français et en anglais.</p>
+</div>
+
+<!-- CHURCH ADMIN -->
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Church Admin</h2><span style="font-size:16px;color:#75685A">Web · desktop</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">1</span><span style="font-weight:600">Création de l'espace et choix du plan</span></div>
+<div data-screen-label="01 Admin inscription" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:64px;border-bottom:1px solid #E6DDCC;display:flex;align-items:center;justify-content:space-between;padding:0 40px"><div style="display:flex;align-items:center;gap:10px"><span style="width:26px;height:26px;border-radius:50%;background:#B9792A"></span><span style="font-family:Newsreader,serif;font-size:22px;font-weight:600">Fahazavana</span></div><span style="font-size:14px;color:#75685A">Étape 2 sur 3</span></div>
+<div style="flex:1;display:grid;grid-template-columns:380px 1fr;gap:56px;padding:48px 56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;line-height:1.1;margin:0">Votre église</h3>
+<div style="display:flex;gap:16px;align-items:center"><div style="width:72px;height:72px;border-radius:50%;background:repeating-linear-gradient(135deg,#EDE4D3 0 6px,#E5D9C3 6px 12px);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:#75685A">logo</div><span style="font-size:14px;color:#9A6220;font-weight:600">Importer un logo</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Nom de l'église</label><div style="height:46px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:16px">Tempoly Fitiavana</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Ville</label><div style="height:46px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:16px">Antananarivo, Analakely</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Langue des prédications</label><div style="height:46px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;display:flex;align-items:center;justify-content:space-between;font-size:16px"><span>Malagasy</span><span style="color:#75685A">▾</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Description</label><div style="height:88px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:12px 14px;font-size:15px;line-height:1.45;color:#2B2219">Fiangonana eto Analakely. Fotoam-pivavahana isan'alahady 9 ora maraina.</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;line-height:1.1;margin:0">Choisissez un plan</h3><span style="font-size:14px;color:#75685A">Quotas mensuels, vérifiés avant chaque direct</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+<div style="border:1px solid #DCD1BD;border-radius:14px;background:#fff;padding:24px;display:flex;flex-direction:column;gap:18px"><div style="font-family:Newsreader,serif;font-size:26px">Basic</div><div style="display:flex;flex-direction:column;gap:10px;font-size:15px"><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Stockage</span><span>10 Go</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Direct</span><span>10 h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">IA</span><span>10 h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Membres</span><span>100</span></div></div><div style="height:44px;border-radius:10px;border:1px solid #DCD1BD;display:grid;place-items:center;font-weight:600;font-size:15px">Choisir</div></div>
+<div style="border:2px solid #B9792A;border-radius:14px;background:#FFF8EC;padding:23px;display:flex;flex-direction:column;gap:18px;position:relative"><span style="position:absolute;top:-12px;left:22px;background:#B9792A;color:#fff;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px">Sélectionné</span><div style="font-family:Newsreader,serif;font-size:26px">Standard</div><div style="display:flex;flex-direction:column;gap:10px;font-size:15px"><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Stockage</span><span>50 Go</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Direct</span><span>50 h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">IA</span><span>50 h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Membres</span><span>500</span></div></div><div style="height:44px;border-radius:10px;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:15px">✓ Standard</div></div>
+<div style="border:1px solid #DCD1BD;border-radius:14px;background:#fff;padding:24px;display:flex;flex-direction:column;gap:18px"><div style="font-family:Newsreader,serif;font-size:26px">Premium</div><div style="display:flex;flex-direction:column;gap:10px;font-size:15px"><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Stockage</span><span>200 Go</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Direct</span><span>200 h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">IA</span><span>200 h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Membres</span><span>2 000</span></div></div><div style="height:44px;border-radius:10px;border:1px solid #DCD1BD;display:grid;place-items:center;font-weight:600;font-size:15px">Choisir</div></div>
+</div>
+<div style="margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #E6DDCC;padding-top:24px"><span style="font-size:15px;color:#75685A">← Retour</span><div style="height:50px;padding:0 28px;border-radius:12px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-weight:600;font-size:16px">Continuer vers le paiement</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">2</span><span style="font-weight:600">Tableau de bord + création d'un prédicateur</span></div>
+<div data-screen-label="02 Admin prédicateurs" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex;position:relative">
+<div style="width:240px;background:#F3ECDF;border-right:1px solid #E6DDCC;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;gap:10px;align-items:center;padding:0 10px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:18px">T</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">Tempoly Fitiavana</span><span style="font-size:12px;color:#75685A">Plan Standard</span></div></div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;color:#75685A">Tableau de bord</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;color:#75685A">Prédications</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;color:#75685A">Directs</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:#FBF8F2;font-weight:600;box-shadow:0 1px 0 #E6DDCC">Prédicateurs</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;color:#75685A">Membres</div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;color:#75685A">Abonnement</div>
+<div style="margin-top:auto;background:#FBF8F2;border:1px solid #E6DDCC;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px">
+<span style="font-size:12px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.05em">Quotas · octobre</span>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Direct</span><span>21 / 50 h</span></div><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:42%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>IA</span><span>19 / 50 h</span></div><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:38%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Stockage</span><span>18,4 / 50 Go</span></div><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:37%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>Membres</span><span>312 / 500</span></div><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:62%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Prédicateurs</h3><div style="height:44px;padding:0 20px;border-radius:10px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-weight:600;font-size:15px">+ Nouveau prédicateur</div></div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Nom</span><span>Email</span><span>Prédications</span><span>Statut</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr;padding:16px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span style="display:flex;gap:12px;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#F4E6CF;display:grid;place-items:center;font-size:13px;font-weight:600;color:#9A6220">RH</span>Pasteur Rakotomalala Hery</span><span style="color:#75685A">hery@fitiavana.mg</span><span>24</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr;padding:16px 20px;font-size:15px;align-items:center"><span style="display:flex;gap:12px;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#F4E6CF;display:grid;place-items:center;font-size:13px;font-weight:600;color:#9A6220">RV</span>Mpitandrina Razafy Voahangy</span><span style="color:#75685A">voahangy@fitiavana.mg</span><span>11</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+</div>
+</div>
+<div style="position:absolute;inset:0;background:rgba(43,34,25,.35);display:grid;place-items:center">
+<div style="width:520px;background:#FBF8F2;border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:18px;box-shadow:0 24px 60px rgba(43,34,25,.25)">
+<div style="display:flex;justify-content:space-between;align-items:center"><h4 style="font-family:Newsreader,serif;font-weight:500;font-size:28px;margin:0">Nouveau prédicateur</h4><span style="font-size:20px;color:#75685A">×</span></div>
+<div style="display:flex;gap:16px;align-items:center"><div style="width:64px;height:64px;border-radius:50%;background:repeating-linear-gradient(135deg,#EDE4D3 0 6px,#E5D9C3 6px 12px);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:#75685A">photo</div><span style="font-size:14px;color:#9A6220;font-weight:600">Ajouter une photo</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Nom complet</label><div style="height:44px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:15px">Andrianaivo Tojo</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Email</label><div style="height:44px;border:2px solid #B9792A;border-radius:10px;background:#fff;padding:0 13px;display:flex;align-items:center;font-size:15px">tojo@fitiavana.mg</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Biographie</label><div style="height:76px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:12px 14px;font-size:15px;color:#A69886">Quelques lignes visibles par les membres…</div></div>
+<div style="display:flex;gap:10px;align-items:center;background:#F4E6CF;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.4"><span style="font-weight:700;color:#9A6220">⚿</span><span>Rattaché à <b>Tempoly Fitiavana</b> uniquement. Il pourra créer des prédications et lancer des directs pour cette église.</span></div>
+<div style="display:flex;justify-content:flex-end;gap:10px"><div style="height:44px;padding:0 18px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-weight:600;font-size:15px">Annuler</div><div style="height:44px;padding:0 20px;border-radius:10px;background:#B9792A;color:#fff;display:flex;align-items:center;font-weight:600;font-size:15px">Créer et envoyer l'invitation</div></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- MEMBRE + PRÉDICATEUR flow -->
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Prédicateur</h2><span style="font-size:16px;color:#75685A">Mobile Flutter</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">4</span><span style="font-weight:600">Préparer le direct</span></div>
+<div data-screen-label="04 Prédicateur préparer" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>9:41</span><span>●●● ▮</span></div>
+<div style="padding:8px 22px 0;display:flex;justify-content:space-between;align-items:center"><span style="font-size:22px">←</span><span style="font-size:13px;color:#75685A">Tempoly Fitiavana</span><span style="width:22px"></span></div>
+<div style="padding:16px 22px;display:flex;flex-direction:column;gap:16px;flex:1">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;line-height:1.1;margin:0">Nouveau direct</h3>
+<div style="height:170px;border-radius:16px;background:repeating-linear-gradient(135deg,#EDE4D3 0 10px,#E5D9C3 10px 20px);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#75685A">aperçu caméra</div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Titre</label><div style="min-height:48px;border:1px solid #DCD1BD;border-radius:12px;background:#fff;padding:12px 14px;font-size:16px">Ny fitiavana tsy mety ho levona</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:13px;color:#75685A;font-weight:500">Langue parlée</label><div style="display:flex;gap:8px"><span style="padding:9px 14px;border-radius:20px;background:#2B2219;color:#FBF8F2;font-size:14px;font-weight:600">Malagasy</span></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><label style="font-size:13px;color:#75685A;font-weight:500">Traductions en direct</label><div style="display:flex;gap:8px"><span style="padding:9px 14px;border-radius:20px;background:#F4E6CF;color:#7A4A12;font-size:14px;font-weight:600">✓ Français</span><span style="padding:9px 14px;border-radius:20px;background:#F4E6CF;color:#7A4A12;font-size:14px;font-weight:600">✓ Anglais</span></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#75685A;border-top:1px solid #E6DDCC;padding-top:12px"><span>Direct : 29 h restantes</span><span>IA : 31 h restantes</span></div>
+<div style="margin-top:auto;height:56px;border-radius:16px;background:#C2502F;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:17px"><span style="width:10px;height:10px;border-radius:50%;background:#fff"></span>Démarrer le direct</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">5</span><span style="font-weight:600">En direct</span></div>
+<div data-screen-label="05 Prédicateur live" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:repeating-linear-gradient(135deg,#4A3A2A 0 12px,#433424 12px 24px);overflow:hidden;display:flex;flex-direction:column;color:#FBF8F2;position:relative">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>10:02</span><span>●●● ▮</span></div>
+<div style="padding:8px 18px;display:flex;justify-content:space-between;align-items:center"><div style="display:flex;gap:8px;align-items:center"><span style="background:#C2502F;padding:5px 10px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.05em">EN DIRECT</span><span style="background:rgba(0,0,0,.4);padding:5px 10px;border-radius:6px;font-size:13px;font-weight:600">24:18</span></div><span style="background:rgba(0,0,0,.4);padding:5px 10px;border-radius:6px;font-size:13px;font-weight:600">148 spectateurs</span></div>
+<div style="flex:1;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#C9B89E">flux caméra du prédicateur</div>
+<div style="margin:0 14px 14px;background:rgba(32,24,16,.78);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px">
+<span style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#E5C48E">Transcription · malagasy</span>
+<p style="margin:0;font-size:15px;line-height:1.45;color:#C9B89E">Ary ankehitriny dia mitoetra ireto telo ireto…</p>
+<p style="margin:0;font-size:17px;line-height:1.45">ny finoana, ny fanantenana, ny fitiavana; fa ny fitiavana no lehibe indrindra.</p>
+</div>
+<div style="padding:0 24px 30px;display:flex;justify-content:space-between;align-items:center">
+<div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:13px;font-weight:600">Micro</div>
+<div style="height:60px;padding:0 26px;border-radius:30px;background:#FBF8F2;color:#C2502F;display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px"><span style="width:14px;height:14px;background:#C2502F;border-radius:3px"></span>Arrêter</div>
+<div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:20px">⟲</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">8</span><span style="font-weight:600">Fin du direct et archivage</span></div>
+<div data-screen-label="08 Prédicateur fin" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>11:14</span><span>●●● ▮</span></div>
+<div style="padding:28px 22px;display:flex;flex-direction:column;gap:22px;flex:1">
+<span style="font-size:13px;color:#75685A;font-weight:500;text-transform:uppercase;letter-spacing:.06em">Direct terminé</span>
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:30px;line-height:1.15;margin:0">Ny fitiavana tsy mety ho levona</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:#75685A">Durée</span><span style="font-family:Newsreader,serif;font-size:28px">1 h 12</span></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;color:#75685A">Pic spectateurs</span><span style="font-family:Newsreader,serif;font-size:28px">212</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid #E6DDCC;border-radius:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Enregistrement</span><span style="color:#5E7F4E;font-weight:600">✓ Prêt</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Transcription malagasy</span><span style="color:#5E7F4E;font-weight:600">✓ Prête</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #F0E9DC;font-size:15px"><span>Traduction français</span><span style="color:#5E7F4E;font-weight:600">✓ Prête</span></div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px;font-size:15px"><div style="display:flex;justify-content:space-between"><span>Traduction anglais</span><span style="color:#9A6220;font-weight:600">78 %</span></div><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:78%;height:100%;background:#B9792A;border-radius:3px"></div></div></div>
+</div>
+<div style="display:flex;gap:10px;align-items:center;background:#F4E6CF;border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.4">Archivée dans la bibliothèque de l'église. Les membres abonnés sont notifiés.</div>
+<div style="margin-top:auto;height:54px;border-radius:16px;background:#2B2219;color:#FBF8F2;display:grid;place-items:center;font-weight:600;font-size:16px">Voir dans la bibliothèque</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Membre / Spectateur</h2><span style="font-size:16px;color:#75685A">Mobile Flutter</span></div>
+<div style="display:flex;gap:48px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">3</span><span style="font-weight:600">Trouver et suivre l'église</span></div>
+<div data-screen-label="03 Membre suivre" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:180px;background:repeating-linear-gradient(135deg,#EDE4D3 0 10px,#E5D9C3 10px 20px);position:relative;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#75685A"><span style="position:absolute;top:14px;left:26px;font-family:Figtree;font-size:14px;font-weight:600;color:#2B2219">9:41</span>photo de l'église</div>
+<div style="padding:0 22px;display:flex;flex-direction:column;gap:14px;flex:1">
+<div style="width:76px;height:76px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:34px;margin-top:-38px;border:4px solid #FBF8F2">T</div>
+<div style="display:flex;flex-direction:column;gap:4px"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:28px;margin:0">Tempoly Fitiavana</h3><span style="font-size:14px;color:#75685A">Antananarivo · 312 membres</span></div>
+<p style="margin:0;font-size:15px;line-height:1.45;color:#4D4134">Fiangonana eto Analakely. Fotoam-pivavahana isan'alahady 9 ora maraina.</p>
+<div style="display:flex;gap:10px"><div style="flex:1;height:48px;border-radius:14px;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px">✓ Suivie</div><div style="width:48px;height:48px;border-radius:14px;border:1px solid #DCD1BD;display:grid;place-items:center;font-size:18px">🔔</div></div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-top:6px">
+<span style="font-size:13px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.06em">Dernières prédications</span>
+<div style="display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;display:grid;place-items:center;color:#9A6220">▶</div><div style="display:flex;flex-direction:column;gap:2px;flex:1"><span style="font-size:15px;font-weight:600">Ilay mpiandry tsara</span><span style="font-size:13px;color:#75685A">Pasteur Hery · 58 min</span></div></div>
+<div style="display:flex;gap:12px;align-items:center"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;display:grid;place-items:center;color:#9A6220">▶</div><div style="display:flex;flex-direction:column;gap:2px;flex:1"><span style="font-size:15px;font-weight:600">Fanantenana velona</span><span style="font-size:13px;color:#75685A">Mpit. Voahangy · 46 min</span></div></div>
+</div>
+</div>
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(4,1fr);font-size:12px;color:#75685A;text-align:center;align-items:center"><span style="color:#2B2219;font-weight:600">Accueil</span><span>Explorer</span><span>Bibliothèque</span><span>Profil</span></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">6</span><span style="font-weight:600">Notification de direct</span></div>
+<div data-screen-label="06 Membre notification" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#5A4330;overflow:hidden;display:flex;flex-direction:column;align-items:center;color:#FBF8F2;padding:0 14px">
+<div style="height:44px;width:100%;display:flex;justify-content:flex-end;align-items:center;padding:0 12px;font-size:14px;font-weight:600">●●● ▮</div>
+<span style="font-size:16px;margin-top:20px;color:#E8D9C2">dimanche 5 octobre</span>
+<span style="font-family:Newsreader,serif;font-size:88px;line-height:1;font-weight:500">10:02</span>
+<div style="margin-top:44px;width:100%;background:rgba(251,248,242,.92);color:#2B2219;border-radius:20px;padding:14px 16px;display:flex;gap:12px">
+<div style="width:40px;height:40px;border-radius:10px;background:#B9792A;flex-shrink:0"></div>
+<div style="display:flex;flex-direction:column;gap:3px;flex:1"><div style="display:flex;justify-content:space-between;font-size:13px;color:#75685A"><span style="font-weight:600;text-transform:uppercase;letter-spacing:.04em">Fahazavana</span><span>maintenant</span></div><span style="font-size:15px;font-weight:700">Tempoly Fitiavana est en direct</span><span style="font-size:15px;line-height:1.35">Pasteur Hery : « Ny fitiavana tsy mety ho levona ». Disponible en français et en anglais.</span></div>
+</div>
+<div style="margin-top:auto;margin-bottom:28px;width:130px;height:5px;border-radius:3px;background:rgba(251,248,242,.7)"></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">7</span><span style="font-weight:600">Direct traduit en temps réel</span></div>
+<div data-screen-label="07 Membre live traduit" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:230px;background:repeating-linear-gradient(135deg,#4A3A2A 0 12px,#433424 12px 24px);position:relative;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#C9B89E">
+<div style="position:absolute;top:0;left:0;right:0;height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-family:Figtree;font-size:14px;font-weight:600;color:#FBF8F2"><span>10:03</span><span>●●● ▮</span></div>
+vidéo du direct
+<div style="position:absolute;bottom:12px;left:14px;display:flex;gap:6px"><span style="background:#C2502F;color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:700">EN DIRECT</span><span style="background:rgba(0,0,0,.45);color:#fff;padding:4px 9px;border-radius:6px;font-family:Figtree;font-size:12px;font-weight:600">149</span></div>
+</div>
+<div style="padding:16px 20px 10px;display:flex;flex-direction:column;gap:4px"><span style="font-family:Newsreader,serif;font-size:22px;line-height:1.2">Ny fitiavana tsy mety ho levona</span><span style="font-size:13px;color:#75685A">Pasteur Hery · Tempoly Fitiavana</span></div>
+<div style="padding:4px 20px 12px;display:flex;gap:6px;border-bottom:1px solid #E6DDCC">
+<span style="padding:8px 12px;border-radius:20px;border:1px solid #DCD1BD;font-size:14px;color:#4D4134">Malagasy</span>
+<span style="padding:8px 14px;border-radius:20px;background:#2B2219;color:#FBF8F2;font-size:14px;font-weight:600">Français</span>
+<span style="padding:8px 12px;border-radius:20px;border:1px solid #DCD1BD;font-size:14px;color:#4D4134">English</span>
+</div>
+<div style="flex:1;padding:16px 20px;display:flex;flex-direction:column;gap:16px;overflow:hidden">
+<div style="display:flex;flex-direction:column;gap:4px;opacity:.55"><span style="font-size:12px;color:#75685A">23:52</span><p style="margin:0;font-size:16px;line-height:1.45">Car nous connaissons en partie, et nous prophétisons en partie.</p></div>
+<div style="display:flex;flex-direction:column;gap:4px;opacity:.75"><span style="font-size:12px;color:#75685A">24:05</span><p style="margin:0;font-size:16px;line-height:1.45">Maintenant donc ces trois choses demeurent : la foi, l'espérance, l'amour.</p></div>
+<div style="display:flex;flex-direction:column;gap:6px;border-left:3px solid #B9792A;padding-left:12px"><span style="font-size:12px;color:#9A6220;font-weight:600">24:18 · en cours</span><p style="margin:0;font-family:Newsreader,serif;font-size:21px;line-height:1.35">Mais la plus grande de ces choses, c'est l'amour.</p><p style="margin:0;font-size:13px;line-height:1.4;color:#75685A;font-style:italic">fa ny fitiavana no lehibe indrindra.</p></div>
+</div>
+<div style="padding:10px 20px 22px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#75685A;border-top:1px solid #E6DDCC"><span>Traduction IA · décalage ~3 s</span><span style="color:#9A6220;font-weight:600">Afficher l'original</span></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">9</span><span style="font-weight:600">Bibliothèque et téléchargement</span></div>
+<div data-screen-label="09 Membre bibliothèque" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>11:20</span><span>●●● ▮</span></div>
+<div style="padding:12px 22px;display:flex;flex-direction:column;gap:16px;flex:1">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:32px;margin:0">Bibliothèque</h3>
+<div style="display:flex;background:#F3ECDF;border-radius:12px;padding:4px"><span style="flex:1;text-align:center;padding:9px;border-radius:9px;background:#FBF8F2;font-size:14px;font-weight:600;box-shadow:0 1px 2px rgba(43,34,25,.08)">Toutes</span><span style="flex:1;text-align:center;padding:9px;font-size:14px;color:#75685A">Téléchargées · 3</span></div>
+<div style="display:flex;flex-direction:column;gap:2px">
+<div style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #EFE7D9"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;flex-shrink:0;display:grid;place-items:center;font-size:11px;color:#9A6220;font-weight:700">NOUV.</div><div style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0"><span style="font-size:15px;font-weight:600">Ny fitiavana tsy mety ho levona</span><span style="font-size:13px;color:#75685A">Aujourd'hui · 1 h 12 · MG FR EN</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="width:36px;height:36px;border-radius:50%;border:3px solid #E6DDCC;border-top-color:#B9792A;border-right-color:#B9792A;display:grid;place-items:center;font-size:10px;font-weight:700">64</div></div></div>
+<div style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #EFE7D9"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;flex-shrink:0"></div><div style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0"><span style="font-size:15px;font-weight:600">Ilay mpiandry tsara</span><span style="font-size:13px;color:#75685A">28 sept. · 58 min · MG FR EN</span></div><div style="width:36px;height:36px;border-radius:50%;background:#5E7F4E;color:#fff;display:grid;place-items:center;font-size:15px">✓</div></div>
+<div style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #EFE7D9"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;flex-shrink:0"></div><div style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0"><span style="font-size:15px;font-weight:600">Fanantenana velona</span><span style="font-size:13px;color:#75685A">21 sept. · 46 min · MG FR</span></div><div style="width:36px;height:36px;border-radius:50%;border:1px solid #DCD1BD;display:grid;place-items:center;font-size:16px">↓</div></div>
+<div style="display:flex;gap:12px;align-items:center;padding:12px 0"><div style="width:56px;height:56px;border-radius:12px;background:#F4E6CF;flex-shrink:0"></div><div style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:0"><span style="font-size:15px;font-weight:600">Ny vavaka mahery</span><span style="font-size:13px;color:#75685A">14 sept. · 51 min · MG FR EN</span></div><div style="width:36px;height:36px;border-radius:50%;background:#5E7F4E;color:#fff;display:grid;place-items:center;font-size:15px">✓</div></div>
+</div>
+<div style="margin-top:auto;background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px">
+<span style="font-size:14px;font-weight:600">Télécharger avec</span>
+<div style="display:flex;gap:8px"><span style="flex:1;text-align:center;padding:9px;border-radius:10px;background:#2B2219;color:#FBF8F2;font-size:14px;font-weight:600">Audio · 38 Mo</span><span style="flex:1;text-align:center;padding:9px;border-radius:10px;border:1px solid #DCD1BD;font-size:14px">Vidéo · 410 Mo</span></div>
+<span style="font-size:13px;color:#75685A">Transcription et traductions incluses</span>
+</div>
+</div>
+<div style="height:70px;border-top:1px solid #E6DDCC;display:grid;grid-template-columns:repeat(4,1fr);font-size:12px;color:#75685A;text-align:center;align-items:center"><span>Accueil</span><span>Explorer</span><span style="color:#2B2219;font-weight:600">Bibliothèque</span><span>Profil</span></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#B9792A;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">10</span><span style="font-weight:600">Écoute hors connexion</span></div>
+<div data-screen-label="10 Membre offline" style="width:375px;height:780px;border-radius:46px;background:#2B2219;padding:10px">
+<div style="width:100%;height:100%;border-radius:37px;background:#FBF8F2;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:600"><span>18:40</span><span>✈ ▮</span></div>
+<div style="margin:6px 20px 0;background:#2B2219;color:#F4E6CF;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;text-align:center">Hors connexion · lecture depuis le téléphone</div>
+<div style="padding:20px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
+<div style="height:250px;border-radius:20px;background:repeating-linear-gradient(135deg,#EDE4D3 0 10px,#E5D9C3 10px 20px);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:#75685A">visuel de la prédication</div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:Newsreader,serif;font-size:26px;line-height:1.15">Ny fitiavana tsy mety ho levona</span><span style="font-size:14px;color:#75685A">Pasteur Hery · Tempoly Fitiavana</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:5px;background:#E6DDCC;border-radius:3px;position:relative"><div style="width:34%;height:100%;background:#B9792A;border-radius:3px"></div><span style="position:absolute;left:34%;top:-5px;width:15px;height:15px;border-radius:50%;background:#B9792A;margin-left:-7px"></span></div><div style="display:flex;justify-content:space-between;font-size:12px;color:#75685A"><span>24:18</span><span>1:12:04</span></div></div>
+<div style="display:flex;justify-content:center;align-items:center;gap:36px"><span style="font-size:15px;color:#4D4134;font-weight:600">−15</span><div style="width:68px;height:68px;border-radius:50%;background:#2B2219;color:#FBF8F2;display:grid;place-items:center;font-size:20px;letter-spacing:-2px">❚❚</div><span style="font-size:15px;color:#4D4134;font-weight:600">+15</span></div>
+<div style="margin-top:auto;background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;font-size:12px;color:#75685A"><span style="font-weight:600;text-transform:uppercase;letter-spacing:.05em">Texte · Français</span><span style="color:#9A6220;font-weight:600">Changer ▾</span></div><p style="margin:0;font-family:Newsreader,serif;font-size:17px;line-height:1.4">Mais la plus grande de ces choses, c'est l'amour.</p></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SUPER ADMIN -->
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:baseline;gap:16px"><h2 style="font-family:Newsreader,serif;font-weight:500;font-size:40px;margin:0">Super Admin</h2><span style="font-size:16px;color:#75685A">Web · desktop · hors scénario</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:center;font-size:15px"><span style="width:28px;height:28px;border-radius:50%;background:#2B2219;color:#fff;display:grid;place-items:center;font-weight:600;font-size:13px">★</span><span style="font-weight:600">Églises, plans et consommation</span></div>
+<div data-screen-label="11 Super Admin" style="width:1280px;height:800px;border-radius:14px;background:#FBF8F2;border:1px solid #DCD1BD;overflow:hidden;display:flex">
+<div style="width:240px;background:#2B2219;color:#E8D9C2;padding:24px 16px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;align-items:center;gap:10px;padding:0 10px 24px"><span style="width:26px;height:26px;border-radius:50%;background:#B9792A"></span><span style="font-family:Newsreader,serif;font-size:22px;color:#FBF8F2">Fahazavana</span></div>
+<div style="padding:10px 12px;border-radius:8px;font-size:15px;background:rgba(251,248,242,.1);color:#FBF8F2;font-weight:600">Églises</div>
+<div style="padding:10px 12px;font-size:15px">Plans</div>
+<div style="padding:10px 12px;font-size:15px">Abonnements</div>
+<div style="padding:10px 12px;font-size:15px">Paiements</div>
+<div style="padding:10px 12px;font-size:15px">Consommation IA</div>
+<div style="padding:10px 12px;font-size:15px">Journal d'activité</div>
+</div>
+<div style="flex:1;padding:36px 44px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Églises</h3><div style="display:flex;gap:10px"><div style="height:42px;width:260px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;display:flex;align-items:center;font-size:14px;color:#A69886">Rechercher une église…</div><div style="height:42px;padding:0 16px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-size:14px;font-weight:600">Tous les plans ▾</div></div></div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Églises actives</span><span style="font-family:Newsreader,serif;font-size:36px">38</span></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Répartition des plans</span><span style="font-size:15px;margin-top:8px">21 Basic · 13 Standard · 4 Premium</span></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Heures IA ce mois</span><span style="font-family:Newsreader,serif;font-size:36px">412 h</span></div>
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#75685A">Abonnements à renouveler</span><span style="font-family:Newsreader,serif;font-size:36px;color:#C2502F">5</span></div>
+</div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr 1fr;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Église</span><span>Plan</span><span>Direct (mois)</span><span>IA (mois)</span><span>Statut</span></div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Tempoly Fitiavana</span><span>Standard</span><span style="display:flex;gap:8px;align-items:center"><span style="width:90px;height:5px;background:#E6DDCC;border-radius:3px"><span style="display:block;width:42%;height:100%;background:#B9792A;border-radius:3px"></span></span>21/50 h</span><span style="display:flex;gap:8px;align-items:center"><span style="width:90px;height:5px;background:#E6DDCC;border-radius:3px"><span style="display:block;width:38%;height:100%;background:#B9792A;border-radius:3px"></span></span>19/50 h</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>FJKM Ambohitantely</span><span>Premium</span><span style="display:flex;gap:8px;align-items:center"><span style="width:90px;height:5px;background:#E6DDCC;border-radius:3px"><span style="display:block;width:31%;height:100%;background:#B9792A;border-radius:3px"></span></span>62/200 h</span><span style="display:flex;gap:8px;align-items:center"><span style="width:90px;height:5px;background:#E6DDCC;border-radius:3px"><span style="display:block;width:29%;height:100%;background:#B9792A;border-radius:3px"></span></span>58/200 h</span><span style="color:#5E7F4E;font-weight:500">● Actif</span></div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr 1fr;padding:15px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>Église Fanilo Toamasina</span><span>Basic</span><span style="display:flex;gap:8px;align-items:center"><span style="width:90px;height:5px;background:#E6DDCC;border-radius:3px"><span style="display:block;width:94%;height:100%;background:#C2502F;border-radius:3px"></span></span>9,4/10 h</span><span style="display:flex;gap:8px;align-items:center"><span style="width:90px;height:5px;background:#E6DDCC;border-radius:3px"><span style="display:block;width:88%;height:100%;background:#C2502F;border-radius:3px"></span></span>8,8/10 h</span><span style="color:#9A6220;font-weight:500">● Quota bas</span></div>
+<div style="display:grid;grid-template-columns:2fr 1fr 1.4fr 1.4fr 1fr;padding:15px 20px;font-size:15px;align-items:center"><span>Fiangonana Soatoavina</span><span>Basic</span><span style="color:#A69886">—</span><span style="color:#A69886">—</span><span style="color:#C2502F;font-weight:500">● Expiré</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+</x-dc>
+</body>
+</html>

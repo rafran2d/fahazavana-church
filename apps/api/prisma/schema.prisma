@@ -1,0 +1,358 @@
+// Schéma de données Fahazavana
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PlatformRole {
+  SUPER_ADMIN
+  USER
+}
+
+enum StaffRole {
+  ADMIN
+  PREACHER
+}
+
+enum ActiveStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum MembershipStatus {
+  ACTIVE
+  LEFT
+}
+
+enum SubscriptionStatus {
+  TRIAL
+  ACTIVE
+  PAST_DUE
+  CANCELED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+enum LiveStatus {
+  STARTING
+  LIVE
+  ENDED
+  FAILED
+}
+
+enum ProcessingStatus {
+  PENDING
+  PROCESSING
+  DONE
+  FAILED
+}
+
+enum UsageMetric {
+  LIVE_MINUTES
+  AI_MINUTES
+  STORAGE_BYTES
+}
+
+enum TranscriptPass {
+  LIVE
+  FINAL
+}
+
+model User {
+  id           String       @id @default(uuid())
+  name         String
+  email        String       @unique
+  passwordHash String       @map("password_hash")
+  platformRole PlatformRole @default(USER) @map("platform_role")
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+
+  staff         ChurchStaff?
+  memberships   Membership[]
+  deviceTokens  DeviceToken[]
+  refreshTokens RefreshToken[]
+  notifications Notification[]
+
+  @@map("users")
+}
+
+model Church {
+  id              String       @id @default(uuid())
+  name            String
+  slug            String       @unique
+  logoKey         String?      @map("logo_key")
+  description     String?
+  status          ActiveStatus @default(ACTIVE)
+  sourceLanguage  String       @default("fr") @map("source_language")
+  targetLanguages String[]     @default([]) @map("target_languages")
+  createdAt       DateTime     @default(now()) @map("created_at")
+  updatedAt       DateTime     @updatedAt @map("updated_at")
+
+  staff         ChurchStaff[]
+  memberships   Membership[]
+  subscriptions Subscription[]
+  sermons       Sermon[]
+  liveStreams   LiveStream[]
+  usageRecords  UsageRecord[]
+
+  @@map("churches")
+}
+
+/// Church Admin et prédicateurs. Un utilisateur appartient au staff d'une seule église au MVP.
+model ChurchStaff {
+  id        String       @id @default(uuid())
+  userId    String       @unique @map("user_id")
+  churchId  String       @map("church_id")
+  role      StaffRole
+  bio       String?
+  photoKey  String?      @map("photo_key")
+  status    ActiveStatus @default(ACTIVE)
+  createdAt DateTime     @default(now()) @map("created_at")
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  church      Church       @relation(fields: [churchId], references: [id], onDelete: Cascade)
+  sermons     Sermon[]
+  liveStreams LiveStream[]
+
+  @@index([churchId])
+  @@map("church_staff")
+}
+
+model Membership {
+  id         String           @id @default(uuid())
+  userId     String           @map("user_id")
+  churchId   String           @map("church_id")
+  status     MembershipStatus @default(ACTIVE)
+  followedAt DateTime         @default(now()) @map("followed_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  church Church @relation(fields: [churchId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, churchId])
+  @@index([churchId, status])
+  @@map("memberships")
+}
+
+model Plan {
+  id               String   @id @default(uuid())
+  name             String   @unique
+  priceCents       Int      @map("price_cents")
+  currency         String   @default("MGA")
+  storageQuotaGb   Int      @map("storage_quota_gb")
+  liveQuotaMinutes Int      @map("live_quota_minutes")
+  aiQuotaMinutes   Int      @map("ai_quota_minutes")
+  memberQuota      Int      @map("member_quota")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  subscriptions Subscription[]
+
+  @@map("plans")
+}
+
+model Subscription {
+  id       String             @id @default(uuid())
+  churchId String             @map("church_id")
+  planId   String             @map("plan_id")
+  status   SubscriptionStatus
+  startAt  DateTime           @map("start_at")
+  endAt    DateTime           @map("end_at")
+
+  church   Church    @relation(fields: [churchId], references: [id], onDelete: Cascade)
+  plan     Plan      @relation(fields: [planId], references: [id])
+  payments Payment[]
+
+  @@index([churchId, status])
+  @@map("subscriptions")
+}
+
+model Payment {
+  id             String        @id @default(uuid())
+  subscriptionId String        @map("subscription_id")
+  amountCents    Int           @map("amount_cents")
+  status         PaymentStatus
+  reference      String?
+  paidAt         DateTime?     @map("paid_at")
+  createdAt      DateTime      @default(now()) @map("created_at")
+
+  subscription Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  @@map("payments")
+}
+
+model UsageRecord {
+  id         String      @id @default(uuid())
+  churchId   String      @map("church_id")
+  metric     UsageMetric
+  quantity   BigInt
+  sourceType String      @map("source_type")
+  sourceId   String      @map("source_id")
+  recordedAt DateTime    @default(now()) @map("recorded_at")
+
+  church Church @relation(fields: [churchId], references: [id], onDelete: Cascade)
+
+  @@index([churchId, metric, recordedAt])
+  @@map("usage_records")
+}
+
+model LiveStream {
+  id         String     @id @default(uuid())
+  churchId   String     @map("church_id")
+  preacherId String     @map("preacher_id")
+  title      String
+  status     LiveStatus @default(STARTING)
+  roomName   String     @unique @map("room_name")
+  egressId   String?    @map("egress_id")
+  hasVideo   Boolean    @default(false) @map("has_video")
+  startedAt  DateTime?  @map("started_at")
+  endedAt    DateTime?  @map("ended_at")
+  createdAt  DateTime   @default(now()) @map("created_at")
+
+  church   Church      @relation(fields: [churchId], references: [id], onDelete: Cascade)
+  preacher ChurchStaff @relation(fields: [preacherId], references: [id])
+  sermon   Sermon?
+
+  @@index([churchId, status])
+  @@map("live_streams")
+}
+
+model Sermon {
+  id               String           @id @default(uuid())
+  churchId         String           @map("church_id")
+  preacherId       String           @map("preacher_id")
+  liveStreamId     String?          @unique @map("live_stream_id")
+  title            String
+  originalLanguage String           @map("original_language")
+  audioKey         String?          @map("audio_key")
+  videoKey         String?          @map("video_key")
+  durationS        Int?             @map("duration_s")
+  sizeBytes        BigInt?          @map("size_bytes")
+  processingStatus ProcessingStatus @default(PENDING) @map("processing_status")
+  publishedAt      DateTime?        @map("published_at")
+  createdAt        DateTime         @default(now()) @map("created_at")
+
+  church         Church              @relation(fields: [churchId], references: [id], onDelete: Cascade)
+  preacher       ChurchStaff         @relation(fields: [preacherId], references: [id])
+  liveStream     LiveStream?         @relation(fields: [liveStreamId], references: [id])
+  segments       TranscriptSegment[]
+  transcriptions Transcription[]
+  translations   Translation[]
+
+  @@index([churchId, publishedAt])
+  @@map("sermons")
+}
+
+/// Unité de base des sous-titres : un segment horodaté dans une langue.
+model TranscriptSegment {
+  id        String         @id @default(uuid())
+  sermonId  String         @map("sermon_id")
+  seq       Int
+  startMs   Int            @map("start_ms")
+  endMs     Int            @map("end_ms")
+  language  String
+  text      String
+  isSource  Boolean        @map("is_source")
+  pass      TranscriptPass
+  createdAt DateTime       @default(now()) @map("created_at")
+
+  sermon Sermon @relation(fields: [sermonId], references: [id], onDelete: Cascade)
+
+  @@unique([sermonId, pass, language, seq])
+  @@index([sermonId, language, pass])
+  @@map("transcript_segments")
+}
+
+/// Statut de traitement par langue (texte dans les segments et l'export JSON).
+model Transcription {
+  id        String           @id @default(uuid())
+  sermonId  String           @map("sermon_id")
+  language  String
+  status    ProcessingStatus @default(PENDING)
+  exportKey String?          @map("export_key")
+  error     String?
+  updatedAt DateTime         @updatedAt @map("updated_at")
+
+  sermon Sermon @relation(fields: [sermonId], references: [id], onDelete: Cascade)
+
+  @@unique([sermonId, language])
+  @@map("transcriptions")
+}
+
+model Translation {
+  id             String           @id @default(uuid())
+  sermonId       String           @map("sermon_id")
+  sourceLanguage String           @map("source_language")
+  targetLanguage String           @map("target_language")
+  status         ProcessingStatus @default(PENDING)
+  exportKey      String?          @map("export_key")
+  error          String?
+  updatedAt      DateTime         @updatedAt @map("updated_at")
+
+  sermon Sermon @relation(fields: [sermonId], references: [id], onDelete: Cascade)
+
+  @@unique([sermonId, targetLanguage])
+  @@map("translations")
+}
+
+model Notification {
+  id        String    @id @default(uuid())
+  userId    String    @map("user_id")
+  type      String
+  title     String
+  message   String
+  data      Json?
+  readAt    DateTime? @map("read_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+  @@map("notifications")
+}
+
+model DeviceToken {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  token      String   @unique
+  platform   String
+  lastSeenAt DateTime @default(now()) @map("last_seen_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("device_tokens")
+}
+
+model RefreshToken {
+  id        String    @id @default(uuid())
+  userId    String    @map("user_id")
+  tokenHash String    @unique @map("token_hash")
+  expiresAt DateTime  @map("expires_at")
+  revokedAt DateTime? @map("revoked_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  actorId    String?  @map("actor_id")
+  churchId   String?  @map("church_id")
+  action     String
+  targetType String?  @map("target_type")
+  targetId   String?  @map("target_id")
+  metadata   Json?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@index([churchId, createdAt])
+  @@map("audit_logs")
+}

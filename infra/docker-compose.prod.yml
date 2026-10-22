@@ -1,0 +1,31 @@
+# Surcharge production : docker compose -f infra/docker-compose.yml -f infra/docker-compose.prod.yml up -d
+# En production : bucket S3 externe recommandé, secrets forts, ports Postgres/Redis non exposés.
+services:
+  postgres:
+    ports: !reset []
+  redis:
+    ports: !reset []
+  minio:
+    ports: !reset []
+  api:
+    environment:
+      NODE_ENV: production
+    restart: unless-stopped
+  ai-worker:
+    restart: unless-stopped
+  caddy:
+    image: caddy:2.8
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../apps/admin/dist:/srv/admin:ro
+      - caddydata:/data
+    depends_on:
+      - api
+      - livekit
+    restart: unless-stopped
+
+volumes:
+  caddydata:

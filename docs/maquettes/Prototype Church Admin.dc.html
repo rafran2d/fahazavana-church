@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#FBF8F2;font-family:Figtree,sans-serif;color:#2B2219;-webkit-font-smoothing:antialiased}a{color:#9A6220}a:hover{color:#7A4A12}*{box-sizing:border-box}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;position:relative">
+<div style="width:232px;flex-shrink:0;background:#F3ECDF;border-right:1px solid #E6DDCC;padding:24px 14px;display:flex;flex-direction:column;gap:4px">
+<div style="display:flex;gap:10px;align-items:center;padding:0 10px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#2B2219;color:#F4E6CF;display:grid;place-items:center;font-family:Newsreader,serif;font-size:18px">T</span><div style="display:flex;flex-direction:column"><span style="font-weight:600;font-size:15px">Tempoly Fitiavana</span><span style="font-size:12px;color:#75685A">Plan {{ planName }}</span></div></div>
+<sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+<div onClick="{{ n.onClick }}" style="padding:10px 12px;border-radius:8px;font-size:15px;cursor:pointer;background:{{ n.bg }};color:{{ n.color }};font-weight:{{ n.weight }}">{{ n.label }}</div>
+</sc-for>
+<div style="margin-top:auto;background:#FBF8F2;border:1px solid #E6DDCC;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px">
+<span style="font-size:12px;font-weight:600;color:#75685A;text-transform:uppercase;letter-spacing:.05em">Quotas · octobre</span>
+<sc-for list="{{ quotas }}" as="q" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:5px"><div style="display:flex;justify-content:space-between;font-size:13px"><span>{{ q.label }}</span><span>{{ q.value }}</span></div><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:{{ q.pct }};height:100%;background:{{ q.bar }};border-radius:3px;transition:width .3s"></div></div></div>
+</sc-for>
+</div>
+</div>
+
+<div style="flex:1;min-width:0;padding:36px 40px;display:flex;flex-direction:column;gap:24px">
+
+<sc-if value="{{ isDash }}" hint-placeholder-val="{{ true }}">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Tableau de bord</h3>
+<div style="background:#2B2219;color:#FBF8F2;border-radius:16px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+<div style="display:flex;gap:16px;align-items:center"><span style="background:#C2502F;padding:5px 10px;border-radius:6px;font-size:13px;font-weight:700">EN DIRECT</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:600">Ny fitiavana tsy mety ho levona</span><span style="font-size:14px;color:#D9C8AE">Pasteur Hery · {{ viewers }} spectateurs</span></div></div>
+<span style="font-size:14px;color:#E5C48E;font-weight:600">FR 61 % · EN 12 % · MG 27 %</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+<sc-for list="{{ quotas }}" as="q" hint-placeholder-count="4">
+<div style="background:#fff;border:1px solid #E6DDCC;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;color:#75685A">{{ q.label }}</span><span style="font-family:Newsreader,serif;font-size:30px">{{ q.value }}</span><div style="height:5px;background:#E6DDCC;border-radius:3px"><div style="width:{{ q.pct }};height:100%;background:{{ q.bar }};border-radius:3px"></div></div></div>
+</sc-for>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><div onClick="{{ goPreachers }}" style="height:44px;padding:0 18px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-weight:600;font-size:15px;cursor:pointer">Gérer les prédicateurs →</div><div onClick="{{ goSermons }}" style="height:44px;padding:0 18px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-weight:600;font-size:15px;cursor:pointer">Voir les prédications →</div></div>
+</sc-if>
+
+<sc-if value="{{ isPreachers }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Prédicateurs</h3><div onClick="{{ openModal }}" style="height:44px;padding:0 20px;border-radius:10px;background:#2B2219;color:#FBF8F2;display:flex;align-items:center;font-weight:600;font-size:15px;cursor:pointer">+ Nouveau prédicateur</div></div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.5fr) 100px 120px;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Nom</span><span>Email</span><span>Prédications</span><span>Statut</span></div>
+<sc-for list="{{ preachers }}" as="p" hint-placeholder-count="2">
+<div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.5fr) 100px 120px;padding:14px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center;background:{{ p.rowBg }}"><span style="display:flex;gap:12px;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#F4E6CF;display:grid;place-items:center;font-size:13px;font-weight:600;color:#9A6220;flex-shrink:0">{{ p.initials }}</span>{{ p.name }}</span><span style="color:#75685A;overflow:hidden;text-overflow:ellipsis">{{ p.email }}</span><span>{{ p.count }}</span><span onClick="{{ p.toggle }}" style="color:{{ p.color }};font-weight:500;cursor:pointer">{{ p.status }}</span></div>
+</sc-for>
+</div>
+<span style="font-size:13px;color:#75685A">Cliquez sur un statut pour suspendre ou réactiver un prédicateur.</span>
+</sc-if>
+
+<sc-if value="{{ isMembers }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div style="display:flex;align-items:baseline;gap:14px"><h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Membres</h3><span style="font-size:15px;color:#75685A">{{ memberCount }} sur {{ memberMax }}</span></div><input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Rechercher un membre…" style="height:42px;width:260px;max-width:100%;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;font-size:14px;font-family:Figtree;outline:none"></input></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<sc-for list="{{ filters }}" as="f" hint-placeholder-count="3"><span onClick="{{ f.onClick }}" style="padding:8px 14px;border-radius:20px;background:{{ f.bg }};color:{{ f.color }};border:1px solid {{ f.border }};font-size:14px;font-weight:600;cursor:pointer">{{ f.label }}</span></sc-for>
+</div>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1.6fr) 100px 110px 110px;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Membre</span><span>Email</span><span>Langue</span><span>Statut</span><span></span></div>
+<sc-for list="{{ members }}" as="m" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1.6fr) 100px 110px 110px;padding:14px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>{{ m.name }}</span><span style="color:#75685A;overflow:hidden;text-overflow:ellipsis">{{ m.email }}</span><span>{{ m.lang }}</span><span style="color:{{ m.color }};font-weight:500">{{ m.status }}</span><span onClick="{{ m.toggle }}" style="font-size:14px;color:#9A6220;font-weight:600;cursor:pointer;text-align:right">{{ m.action }}</span></div>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ isSermons }}" hint-placeholder-val="{{ false }}">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Prédications</h3>
+<div style="border:1px solid #E6DDCC;border-radius:14px;background:#fff;overflow:hidden">
+<div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.1fr) 120px 140px 140px;padding:14px 20px;font-size:13px;color:#75685A;border-bottom:1px solid #E6DDCC;font-weight:500"><span>Titre</span><span>Prédicateur</span><span>Transcription</span><span>Français</span><span>Anglais</span></div>
+<sc-for list="{{ sermons }}" as="s" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.1fr) 120px 140px 140px;padding:14px 20px;font-size:15px;border-bottom:1px solid #F0E9DC;align-items:center"><span>{{ s.title }}</span><span>{{ s.preacher }}</span><span style="color:#5E7F4E;font-weight:500">✓ Prête</span><span onClick="{{ s.fr.onClick }}" style="color:{{ s.fr.color }};font-weight:500;cursor:{{ s.fr.cursor }}">{{ s.fr.label }}</span><span onClick="{{ s.en.onClick }}" style="color:{{ s.en.color }};font-weight:500;cursor:{{ s.en.cursor }}">{{ s.en.label }}</span></div>
+</sc-for>
+</div>
+<span style="font-size:13px;color:#75685A">Cliquez sur « Échec · Relancer » ou « Demander » pour lancer un traitement IA (décompté du quota).</span>
+</sc-if>
+
+<sc-if value="{{ isPlan }}" hint-placeholder-val="{{ false }}">
+<h3 style="font-family:Newsreader,serif;font-weight:500;font-size:36px;margin:0">Abonnement</h3>
+<sc-if value="{{ aiWarning }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:14px;align-items:center;background:#F8E3DA;border:1px solid #E9B9A6;border-radius:14px;padding:16px 20px"><span style="width:32px;height:32px;border-radius:50%;background:#C2502F;color:#fff;display:grid;place-items:center;font-weight:700;flex-shrink:0">!</span><span style="font-size:15px">Quota IA presque atteint ({{ aiPct }}). Passez à un plan supérieur pour continuer la transcription des directs.</span></div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+<sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+<div style="border:2px solid {{ p.border }};border-radius:14px;background:{{ p.bg }};padding:22px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:Newsreader,serif;font-size:26px">{{ p.name }}</div>
+<div style="display:flex;flex-direction:column;gap:9px;font-size:15px"><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Stockage</span><span>{{ p.storage }} Go</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Direct</span><span>{{ p.live }} h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">IA</span><span>{{ p.ai }} h</span></div><div style="display:flex;justify-content:space-between"><span style="color:#75685A">Membres</span><span>{{ p.members }}</span></div></div>
+<div onClick="{{ p.onClick }}" style="height:44px;border-radius:10px;background:{{ p.btnBg }};color:{{ p.btnColor }};border:1px solid {{ p.btnBorder }};display:grid;place-items:center;font-weight:600;font-size:15px;cursor:pointer">{{ p.btn }}</div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+
+<sc-if value="{{ modal }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;inset:0;background:rgba(43,34,25,.35);display:grid;place-items:center;padding:20px;z-index:10">
+<div style="width:520px;max-width:100%;background:#FBF8F2;border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:16px;box-shadow:0 24px 60px rgba(43,34,25,.25)">
+<div style="display:flex;justify-content:space-between;align-items:center"><h4 style="font-family:Newsreader,serif;font-weight:500;font-size:28px;margin:0">Nouveau prédicateur</h4><span onClick="{{ closeModal }}" style="font-size:22px;color:#75685A;cursor:pointer">×</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Nom complet</label><input value="{{ newName }}" onChange="{{ onName }}" placeholder="ex. Andrianaivo Tojo" style="height:44px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;font-size:15px;font-family:Figtree;outline:none"></input></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:13px;color:#75685A;font-weight:500">Email</label><input value="{{ newEmail }}" onChange="{{ onEmail }}" placeholder="tojo@fitiavana.mg" style="height:44px;border:1px solid #DCD1BD;border-radius:10px;background:#fff;padding:0 14px;font-size:15px;font-family:Figtree;outline:none"></input></div>
+<div style="background:#F4E6CF;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.4">Rattaché à <b>Tempoly Fitiavana</b> uniquement.</div>
+<sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:#C2502F">{{ formError }}</span></sc-if>
+<div style="display:flex;justify-content:flex-end;gap:10px"><div onClick="{{ closeModal }}" style="height:44px;padding:0 18px;border-radius:10px;border:1px solid #DCD1BD;display:flex;align-items:center;font-weight:600;font-size:15px;cursor:pointer">Annuler</div><div onClick="{{ createPreacher }}" style="height:44px;padding:0 20px;border-radius:10px;background:#B9792A;color:#fff;display:flex;align-items:center;font-weight:600;font-size:15px;cursor:pointer">Créer et envoyer l'invitation</div></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}"><div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#2B2219;color:#FBF8F2;border-radius:12px;padding:12px 18px;font-size:14px;z-index:20">{{ toast }}</div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PLANS = { Basic: { storage: 10, live: 10, ai: 10, members: 100 }, Standard: { storage: 50, live: 50, ai: 50, members: 500 }, Premium: { storage: 200, live: 200, ai: 200, members: 2000 } };
+const ini = n => n.split(/\s+/).filter(Boolean).slice(-2).map(w => w[0].toUpperCase()).join("");
+
+class Component extends DCLogic {
+  state = { page: "dash", plan: "Standard", used: { storage: 31.2, live: 44, ai: 48 }, viewers: 149, modal: false, newName: "", newEmail: "", formError: null, toast: null, query: "", filter: "all", highlight: null,
+    preachers: [{ name: "Pasteur Rakotomalala Hery", email: "hery@fitiavana.mg", count: 24, active: true }, { name: "Mpitandrina Razafy Voahangy", email: "voahangy@fitiavana.mg", count: 11, active: true }],
+    members: [{ name: "Fanja Randria", email: "fanja@gmail.com", lang: "Français", blocked: false }, { name: "Rabe Andry", email: "andry.rabe@yahoo.fr", lang: "Malagasy", blocked: false }, { name: "Sarah Mitchell", email: "sarah.m@outlook.com", lang: "English", blocked: false }, { name: "Rasoanaivo Lova", email: "lova.r@gmail.com", lang: "Français", blocked: false }, { name: "Compte inconnu", email: "x9_promo@mail.ru", lang: "—", blocked: true }],
+    sermons: [{ title: "Ny fitiavana tsy mety ho levona", preacher: "Pasteur Hery", fr: 100, en: 78 }, { title: "Ilay mpiandry tsara", preacher: "Pasteur Hery", fr: 100, en: 100 }, { title: "Fanantenana velona", preacher: "Mpit. Voahangy", fr: 100, en: null }, { title: "Ny finoana sy ny asa", preacher: "Pasteur Hery", fr: -1, en: null }] };
+
+  componentDidMount() {
+    this.iv = setInterval(() => this.setState(s => {
+      const run = v => v !== null && v >= 0 && v < 100;
+      const busy = s.sermons.some(x => run(x.fr) || run(x.en));
+      return { viewers: s.viewers + (Math.random() < .4 ? 1 : 0), ...(busy ? { sermons: s.sermons.map(x => ({ ...x, fr: run(x.fr) ? Math.min(100, x.fr + 10) : x.fr, en: run(x.en) ? Math.min(100, x.en + 10) : x.en })) } : {}) };
+    }), 1000);
+  }
+  componentWillUnmount() { clearInterval(this.iv); clearTimeout(this.tt); }
+  flash(m) { clearTimeout(this.tt); this.setState({ toast: m }); this.tt = setTimeout(() => this.setState({ toast: null }), 2400); }
+
+  renderVals() {
+    const s = this.state, P = PLANS[s.plan], memberCount = 312 + s.members.length - 5;
+    const q = (label, u, max, unit) => { const r = u / max; return { label, value: (unit === "Go" ? String(u).replace(".", ",") : u) + " / " + max + (unit ? " " + unit : ""), pct: Math.min(100, r * 100).toFixed(0) + "%", bar: r >= .9 ? "#C2502F" : "#B9792A" }; };
+    const go = page => this.setState({ page });
+    const job = (x, k) => {
+      const v = x[k], start = () => { if (s.used.ai >= P.ai) return this.flash("Quota IA atteint : traitement impossible"); this.setState(st => ({ sermons: st.sermons.map(y => y === x ? { ...y, [k]: 0 } : y), used: { ...st.used, ai: st.used.ai + 1 } })); this.flash("Traitement IA lancé"); };
+      if (v === 100) return { label: "✓ Prête", color: "#5E7F4E", cursor: "default", onClick: null };
+      if (v === -1) return { label: "Échec · Relancer", color: "#C2502F", cursor: "pointer", onClick: start };
+      if (v === null) return { label: "Demander", color: "#9A6220", cursor: "pointer", onClick: start };
+      return { label: v + " %", color: "#9A6220", cursor: "default", onClick: null };
+    };
+    const ql = s.query.toLowerCase();
+    const mem = s.members.filter(m => (s.filter === "all" || (s.filter === "blocked") === m.blocked) && (!ql || (m.name + m.email).toLowerCase().includes(ql)));
+    return {
+      planName: s.plan,
+      nav: [["Tableau de bord", "dash"], ["Prédications", "sermons"], ["Prédicateurs", "preachers"], ["Membres", "members"], ["Abonnement", "plan"]].map(([label, p]) => ({ label, bg: s.page === p ? "#FBF8F2" : "transparent", color: s.page === p ? "#2B2219" : "#75685A", weight: s.page === p ? 600 : 400, onClick: () => go(p) })),
+      quotas: [q("Direct", s.used.live, P.live, "h"), q("IA", s.used.ai, P.ai, "h"), q("Stockage", s.used.storage, P.storage, "Go"), q("Membres", memberCount, P.members, "")],
+      isDash: s.page === "dash", isPreachers: s.page === "preachers", isMembers: s.page === "members", isSermons: s.page === "sermons", isPlan: s.page === "plan",
+      goPreachers: () => go("preachers"), goSermons: () => go("sermons"), viewers: s.viewers,
+      preachers: s.preachers.map((p, i) => ({ ...p, initials: ini(p.name), status: p.active ? "● Actif" : "● Suspendu", color: p.active ? "#5E7F4E" : "#A69886", rowBg: s.highlight === i ? "#FFF8EC" : "transparent",
+        toggle: () => this.setState(st => ({ preachers: st.preachers.map((x, j) => j === i ? { ...x, active: !x.active } : x) })) })),
+      modal: s.modal, openModal: () => this.setState({ modal: true, newName: "", newEmail: "", formError: null }), closeModal: () => this.setState({ modal: false }),
+      newName: s.newName, newEmail: s.newEmail, onName: e => this.setState({ newName: e.target.value }), onEmail: e => this.setState({ newEmail: e.target.value }), formError: s.formError,
+      createPreacher: () => {
+        if (!s.newName.trim()) return this.setState({ formError: "Indiquez un nom." });
+        if (!/^\S+@\S+\.\S+$/.test(s.newEmail)) return this.setState({ formError: "Email invalide." });
+        this.setState(st => ({ modal: false, preachers: [...st.preachers, { name: st.newName.trim(), email: st.newEmail.trim(), count: 0, active: true }], highlight: st.preachers.length }));
+        this.flash("Invitation envoyée à " + s.newEmail);
+      },
+      memberCount, memberMax: P.members, query: s.query, onQuery: e => this.setState({ query: e.target.value }),
+      filters: [["all", "Tous"], ["active", "Actifs"], ["blocked", "Bloqués"]].map(([k, l]) => ({ label: l, bg: s.filter === k ? "#2B2219" : "transparent", color: s.filter === k ? "#FBF8F2" : "#2B2219", border: s.filter === k ? "#2B2219" : "#DCD1BD", onClick: () => this.setState({ filter: k }) })),
+      members: mem.map(m => ({ ...m, status: m.blocked ? "● Bloqué" : "● Actif", color: m.blocked ? "#C2502F" : "#5E7F4E", action: m.blocked ? "Débloquer" : "Bloquer",
+        toggle: () => this.setState(st => ({ members: st.members.map(x => x === m ? { ...x, blocked: !x.blocked } : x) })) })),
+      sermons: s.sermons.map(x => ({ title: x.title, preacher: x.preacher, fr: job(x, "fr"), en: job(x, "en") })),
+      aiWarning: s.used.ai / P.ai >= .9, aiPct: Math.round(s.used.ai / P.ai * 100) + " %",
+      plans: Object.entries(PLANS).map(([name, v]) => { const cur = s.plan === name; return { name, ...v, border: cur ? "#B9792A" : "#E6DDCC", bg: cur ? "#FFF8EC" : "#fff", btn: cur ? "✓ Plan actuel" : "Choisir " + name, btnBg: cur ? "#B9792A" : "transparent", btnColor: cur ? "#fff" : "#2B2219", btnBorder: cur ? "#B9792A" : "#DCD1BD",
+        onClick: () => { if (cur) return; if (s.used.storage > v.storage || memberCount > v.members) return this.flash("Impossible : usage actuel supérieur aux quotas " + name); this.setState({ plan: name }); this.flash("Plan " + name + " activé"); } }; }),
+      toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

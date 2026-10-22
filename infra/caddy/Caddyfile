@@ -1,0 +1,16 @@
+# Production : remplacer les domaines. Caddy obtient les certificats TLS automatiquement.
+api.example.mg {
+  reverse_proxy api:3000
+}
+
+live.example.mg {
+  reverse_proxy livekit:7880
+}
+
+# Console web Church Admin / Super Admin (fichiers statiques de apps/admin/dist)
+# Construire avant : cd apps/admin && VITE_API_URL=https://api.example.mg/api/v1 npm run build
+admin.example.mg {
+  root * /srv/admin
+  try_files {path} /index.html
+  file_server
+}

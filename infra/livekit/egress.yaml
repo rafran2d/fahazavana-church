@@ -1,0 +1,8 @@
+# Configuration LiveKit Egress (enregistrement des lives vers S3/MinIO)
+api_key: devkey
+api_secret: devsecret-change-me-at-least-32-characters
+ws_url: ws://livekit:7880
+redis:
+  address: redis:6379
+log_level: info
+health_port: 8080
