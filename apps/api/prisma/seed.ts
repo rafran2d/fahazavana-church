@@ -39,8 +39,8 @@ async function main() {
       name: 'Église Démo',
       slug: 'eglise-demo',
       description: 'Église de démonstration du MVP',
-      sourceLanguage: 'fr',
-      targetLanguages: ['en', 'mg'],
+      sourceLanguage: 'mg',
+      targetLanguages: ['fr', 'en'],
     },
     update: {},
   });
