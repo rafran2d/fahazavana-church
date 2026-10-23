@@ -117,6 +117,9 @@ class LiveSubtitlesAgent:
         }
 
     async def _publish(self, row: dict) -> None:
+        # Au mieux : après l'arrêt du live, les segments en retard doivent quand même être enregistrés
+        if self._done.is_set():
+            return
         message = {
             "seq": row["seq"],
             "startMs": row["startMs"],
@@ -125,8 +128,11 @@ class LiveSubtitlesAgent:
             "text": row["text"],
             "final": True,
         }
-        await self.room.local_participant.publish_data(
-            json.dumps(message, ensure_ascii=False).encode("utf-8"),
-            reliable=True,
-            topic=SUBTITLES_TOPIC,
-        )
+        try:
+            await self.room.local_participant.publish_data(
+                json.dumps(message, ensure_ascii=False).encode("utf-8"),
+                reliable=True,
+                topic=SUBTITLES_TOPIC,
+            )
+        except rtc.participant.PublishDataError as exc:
+            log.warning("Sous-titre %d non diffusé (%s) : %s", row["seq"], row["language"], exc)
